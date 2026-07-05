@@ -1,0 +1,73 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: light dark;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-paper text-ink font-sans antialiased;
+    @apply dark:bg-night dark:text-paper;
+  }
+
+  /* Editorial body copy gets generous, readable measure. */
+  ::selection {
+    @apply bg-flame text-paper;
+  }
+
+  /* Focus states that read as intentional, not browser-default. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-flame ring-offset-2 ring-offset-paper dark:ring-offset-night;
+  }
+}
+
+@layer components {
+  /* The small all-caps label used above section headers and on tags. */
+  .eyebrow {
+    @apply font-display text-xs font-semibold uppercase tracking-label text-flame;
+  }
+
+  /* The hairline rule used to separate editorial blocks. */
+  .rule {
+    @apply border-t border-ink/15 dark:border-paper/15;
+  }
+
+  /* Long-form article styles for rendered MDX. */
+  .prose-editorial {
+    @apply max-w-prose text-lg leading-relaxed text-ink/90 dark:text-paper/85;
+  }
+  .prose-editorial h2 {
+    @apply font-display text-3xl font-bold tracking-tight mt-14 mb-4 text-ink dark:text-paper;
+  }
+  .prose-editorial h3 {
+    @apply font-display text-2xl font-semibold tracking-tight mt-10 mb-3 text-ink dark:text-paper;
+  }
+  .prose-editorial p {
+    @apply mb-6;
+  }
+  .prose-editorial a {
+    @apply text-flame underline decoration-flame/40 underline-offset-4 hover:decoration-flame;
+  }
+  .prose-editorial blockquote {
+    @apply my-10 border-l-2 border-flame pl-6 font-serif text-2xl italic leading-snug text-ink dark:text-paper;
+  }
+  .prose-editorial ul {
+    @apply mb-6 list-disc space-y-2 pl-6;
+  }
+  .prose-editorial ol {
+    @apply mb-6 list-decimal space-y-2 pl-6;
+  }
+  .prose-editorial strong {
+    @apply font-semibold text-ink dark:text-paper;
+  }
+  .prose-editorial hr {
+    @apply rule my-12;
+  }
+}

@@ -1,0 +1,304 @@
+@import url('https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&f[]=satoshi@400,500,600,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ── CSS custom properties ── */
+:root {
+  --bg:         #080c14;
+  --surface:    #0f1623;
+  --surface-2:  #141d2e;
+  --surface-3:  #1a2436;
+  --rule:       #1e2d45;
+  --hairline:   #172033;
+  --ink:        #ecf1fb;
+  --ink-soft:   #c2cce0;
+  --ink-muted:  #8896b3;
+  --ink-faint:  #525f7d;
+  --blue:       #5BCEFA;
+  --pink:       #F5A9B8;
+  --accent:     var(--blue);
+  --accent-2:   var(--pink);
+  --highlight:  color-mix(in oklab, var(--accent) 18%, transparent);
+  --t:          200ms cubic-bezier(.2,.7,.2,1);
+}
+
+/* ── Base reset ── */
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: "ss01","cv11","kern","liga";
+    scroll-behavior: smooth;
+    background: var(--bg);
+    color: var(--ink);
+  }
+
+  body {
+    font-family: 'Satoshi', system-ui, sans-serif;
+    font-size: 16.5px;
+    line-height: 1.65;
+    background: var(--bg);
+    color: var(--ink);
+  }
+
+  ::selection {
+    background: var(--highlight);
+  }
+
+  img, svg { display: block; max-width: 100%; }
+
+  /* focus ring */
+  :focus-visible {
+    outline: 2px solid var(--blue);
+    outline-offset: 3px;
+  }
+}
+
+/* ── Component classes ── */
+@layer components {
+
+  /* Category pill (glowing dot + mono label) */
+  .cat-pill {
+    @apply inline-flex items-center gap-2;
+    padding: 7px 14px;
+    border-radius: 999px;
+    background: color-mix(in oklab, var(--blue) 12%, transparent);
+    border: 1px solid color-mix(in oklab, var(--blue) 32%, transparent);
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--blue);
+  }
+  .cat-pill::before {
+    content: "";
+    width: 6px; height: 6px;
+    border-radius: 999px;
+    background: var(--blue);
+    box-shadow: 0 0 8px var(--blue);
+  }
+
+  /* Eyebrow label (mono, muted) */
+  .eyebrow {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 10.5px;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+  }
+
+  /* Surface card */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 18px;
+  }
+
+  /* Hairline rule */
+  .rule {
+    border-top: 1px solid var(--hairline);
+  }
+
+  /* Pull quote (serif, gradient bg) */
+  .pullquote {
+    position: relative;
+    padding: 36px 36px 36px 52px;
+    border-radius: 18px;
+    background:
+      radial-gradient(80% 100% at 0% 0%, color-mix(in oklab, var(--accent) 20%, transparent), transparent 60%),
+      var(--surface);
+    border: 1px solid var(--rule);
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: clamp(1.3rem, 2vw, 1.7rem);
+    line-height: 1.35;
+    color: var(--ink);
+    letter-spacing: -0.01em;
+  }
+  .pullquote::before {
+    content: "\201C";
+    position: absolute; top: -4px; left: 14px;
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-size: 80px; line-height: 1;
+    color: var(--accent); opacity: 0.85;
+  }
+
+  /* Gradient title text */
+  .title-gradient {
+    background: linear-gradient(120deg, var(--ink) 30%, var(--blue) 70%, var(--pink) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Tag chip */
+  .tag {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-size: 11.5px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 999px;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    color: var(--ink-muted);
+    text-decoration: none;
+    transition: color var(--t), border-color var(--t);
+  }
+  .tag:hover {
+    color: var(--blue);
+    border-color: var(--blue);
+  }
+
+  /* Button: primary */
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    padding: 11px 22px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--blue), var(--pink));
+    font-family: 'Satoshi', system-ui, sans-serif;
+    font-size: 0.84rem;
+    font-weight: 600;
+    color: #0a0f1c;
+    border: 0;
+    cursor: pointer;
+    transition: transform var(--t), opacity var(--t);
+  }
+  .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+
+  /* Button: ghost */
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    padding: 11px 22px;
+    border-radius: 999px;
+    border: 1px solid var(--rule);
+    background: transparent;
+    font-family: 'Satoshi', system-ui, sans-serif;
+    font-size: 0.84rem;
+    font-weight: 500;
+    color: var(--ink-soft);
+    cursor: pointer;
+    transition: border-color var(--t), color var(--t);
+  }
+  .btn-ghost:hover { border-color: var(--blue); color: var(--blue); }
+
+  /* Reading progress bar */
+  .progress-bar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    z-index: 200;
+    background: var(--hairline);
+  }
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--blue), var(--pink));
+    width: 0;
+    transition: width 100ms linear;
+  }
+}
+
+/* ── Prose (blog body) ── */
+.prose-editorial {
+  font-family: 'Satoshi', system-ui, sans-serif;
+  font-size: 17px;
+  line-height: 1.72;
+  color: var(--ink-soft);
+}
+.prose-editorial > * + * { margin-top: 1.6em; }
+
+.prose-editorial h2 {
+  font-family: 'Clash Display', system-ui, sans-serif;
+  font-weight: 600;
+  font-size: clamp(1.5rem, 2.6vw, 2rem);
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin-top: 2.6em;
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: 16px;
+  align-items: baseline;
+  scroll-margin-top: 90px;
+  counter-increment: h2;
+}
+.prose-editorial h2::before {
+  content: counter(h2, decimal-leading-zero);
+  font-family: 'JetBrains Mono', ui-monospace, monospace;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.14em;
+  color: var(--blue);
+  border-top: 2px solid var(--blue);
+  padding-top: 12px;
+  align-self: start;
+  margin-top: 6px;
+}
+.prose-editorial { counter-reset: h2; }
+
+.prose-editorial h3 {
+  font-family: 'Clash Display', system-ui, sans-serif;
+  font-weight: 500;
+  font-size: 1.2em;
+  letter-spacing: -0.005em;
+  color: var(--ink);
+  margin-top: 1.8em;
+}
+
+.prose-editorial p { color: var(--ink-soft); }
+.prose-editorial p:first-child {
+  font-size: 1.15em;
+  line-height: 1.6;
+  color: var(--ink);
+  padding-bottom: 1.4em;
+  border-bottom: 1px solid var(--hairline);
+}
+.prose-editorial strong { color: var(--ink); font-weight: 600; }
+.prose-editorial em { color: var(--pink); font-style: italic; }
+.prose-editorial a {
+  color: var(--blue);
+  border-bottom: 1px solid color-mix(in oklab, var(--blue) 40%, transparent);
+  text-decoration: none;
+  transition: border-color var(--t), background var(--t);
+}
+.prose-editorial a:hover {
+  border-bottom-color: var(--blue);
+  background: var(--highlight);
+}
+.prose-editorial blockquote {
+  position: relative;
+  padding: 32px 32px 32px 48px;
+  border-radius: 14px;
+  background:
+    radial-gradient(80% 100% at 0% 0%, color-mix(in oklab, var(--blue) 18%, transparent), transparent 60%),
+    var(--surface);
+  border: 1px solid var(--rule);
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 1.35rem;
+  line-height: 1.35;
+  color: var(--ink);
+  margin: 2em 0;
+}
+.prose-editorial blockquote::before {
+  content: "\201C";
+  position: absolute; top: -4px; left: 12px;
+  font-family: 'DM Serif Display', Georgia, serif;
+  font-size: 72px; line-height: 1;
+  color: var(--blue); opacity: 0.85;
+}
+.prose-editorial ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+.prose-editorial ul li::before {
+  content: "—";
+  color: var(--blue);
+  margin-right: 0.6em;
+}

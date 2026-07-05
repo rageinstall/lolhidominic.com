@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,600;0,700;0,800;0,900;1,400&family=Hanken+Grotesk:wght@400;500;600;700&family=Newsreader:ital,wght@1,400;1,500&display=swap" rel="stylesheet">
+<style>
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+[data-theme="light"] {
+  --bg:       #F4F0E9;
+  --bg-soft:  #EBE5DA;
+  --text:     #14110F;
+  --t70:      rgba(20,17,15,.70);
+  --t55:      rgba(20,17,15,.55);
+  --t40:      rgba(20,17,15,.40);
+  --t15:      rgba(20,17,15,.15);
+  --t10:      rgba(20,17,15,.10);
+  --nav-bg:   rgba(244,240,233,.88);
+}
+[data-theme="dark"] {
+  --bg:       #0E0D0C;
+  --bg-soft:  #1A1817;
+  --text:     #F4F0E9;
+  --t70:      rgba(244,240,233,.70);
+  --t55:      rgba(244,240,233,.55);
+  --t40:      rgba(244,240,233,.40);
+  --t15:      rgba(244,240,233,.15);
+  --t10:      rgba(244,240,233,.10);
+  --nav-bg:   rgba(14,13,12,.88);
+}
+*,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg,#F4F0E9); }
+</style>
+</helmet>
+
+<div data-theme="{{ theme }}" style="background: var(--bg); color: var(--text); font-family: 'Hanken Grotesk', system-ui, sans-serif; -webkit-font-smoothing: antialiased; min-height: 100vh;">
+
+  <!-- ─── NAV ─── -->
+  <header style="position: sticky; top: 0; z-index: 50; border-bottom: 1px solid var(--t10); background: var(--nav-bg); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);">
+    <nav aria-label="Primary" style="max-width: 1280px; margin: 0 auto; padding: 18px 48px; display: flex; align-items: center; justify-content: space-between; gap: 32px;">
+      <a href="#" style="font-family: 'Archivo', sans-serif; font-size: 1.1rem; font-weight: 900; letter-spacing: -0.04em; text-decoration: none; color: var(--text); flex-shrink: 0;">
+        lolhi<span style="color: #FF4A1C;">dominic</span>
+      </a>
+      <ul style="display: flex; align-items: center; gap: 28px; list-style: none; flex: 1; justify-content: center;">
+        <li><a href="#" style="font-family: 'Archivo', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: -0.01em; color: #FF4A1C; text-decoration: none;">Writing</a></li>
+        <li><a href="#" style="font-family: 'Archivo', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: -0.01em; color: var(--t70); text-decoration: none;">About</a></li>
+        <li><a href="#" style="font-family: 'Archivo', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: -0.01em; color: var(--t70); text-decoration: none;">Work With Me</a></li>
+        <li><a href="#" style="font-family: 'Archivo', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: -0.01em; color: var(--t70); text-decoration: none;">Press</a></li>
+        <li><a href="#" style="font-family: 'Archivo', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: -0.01em; color: var(--t70); text-decoration: none;">Link With Pride</a></li>
+        <li><a href="#" style="font-family: 'Archivo', sans-serif; font-size: 0.82rem; font-weight: 600; letter-spacing: -0.01em; color: var(--t70); text-decoration: none;">Contact</a></li>
+      </ul>
+      <button onClick="{{ toggleTheme }}" style="flex-shrink: 0; font-family: 'Archivo', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; padding: 7px 16px; border: 1px solid var(--t15); background: transparent; color: var(--t55); cursor: pointer;">
+        {{ themeLabel }}
+      </button>
+    </nav>
+  </header>
+
+  <!-- ─── HERO ─── -->
+  <section style="max-width: 1280px; margin: 0 auto; padding: 88px 48px 104px;">
+    <p style="font-family: 'Archivo', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #FF4A1C; margin-bottom: 32px; animation: fadeUp 0.55s 0.05s ease-out both;">
+      Creator-journalist &middot; Cultural translator
+    </p>
+    <h1 style="font-family: 'Archivo', sans-serif; font-size: clamp(3.2rem, 6.5vw, 7rem); font-weight: 900; line-height: 0.94; letter-spacing: -0.035em; color: var(--text); max-width: 13ch; text-wrap: balance; animation: fadeUp 0.65s 0.15s ease-out both;">
+      Culture moves fast. I slow it down so it makes sense.
+    </h1>
+    <div style="margin-top: 40px; display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: flex-end; animation: fadeUp 0.65s 0.28s ease-out both;">
+      <p style="max-width: 560px; font-size: 1.15rem; line-height: 1.7; color: var(--t70);">
+        I&rsquo;m Dominic. I write about media literacy, internet culture, representation, and trans life for the people the headlines usually talk over. Real talk, receipts included. No lectures, no panic.
+      </p>
+      <div style="display: flex; gap: 12px; flex-shrink: 0; padding-bottom: 2px;">
+        <a href="#" style="display: inline-block; background: var(--text); color: var(--bg); padding: 14px 28px; font-family: 'Archivo', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; text-decoration: none;">
+          Read the writing
+        </a>
+        <a href="#" style="display: inline-block; border: 1px solid var(--t15); color: var(--text); padding: 14px 28px; font-family: 'Archivo', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; text-decoration: none;">
+          Who I am
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── RULE ─── -->
+  <div style="max-width: 1280px; margin: 0 auto; padding: 0 48px;">
+    <div style="border-top: 1px solid var(--t10);"></div>
+  </div>
+
+  <!-- ─── WRITING ─── -->
+  <section aria-labelledby="writing-heading" style="max-width: 1280px; margin: 0 auto; padding: 80px 48px 100px;">
+    <div style="display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 52px;">
+      <div>
+        <p style="font-family: 'Archivo', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #FF4A1C; margin-bottom: 14px;">Latest</p>
+        <h2 id="writing-heading" style="font-family: 'Archivo', sans-serif; font-size: clamp(1.8rem, 3.2vw, 3rem); font-weight: 900; line-height: 1.02; letter-spacing: -0.025em; color: var(--text);">What I&rsquo;ve been getting into</h2>
+      </div>
+      <a href="#" style="font-family: 'Archivo', sans-serif; font-size: 0.85rem; font-weight: 700; color: #FF4A1C; text-decoration: none; white-space: nowrap; flex-shrink: 0; padding-bottom: 4px;">All writing &rarr;</a>
+    </div>
+
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start;">
+
+      <!-- Featured post -->
+      <article>
+        <a href="#" style="display: block; text-decoration: none; color: inherit;">
+          <div style="position: relative; width: 100%; aspect-ratio: 16/9; overflow: hidden; background: linear-gradient(150deg, #1D1B18 0%, #2E2824 38%, #3C3028 68%, #1A1510 100%);">
+            <div style="position: absolute; inset: 0; background: repeating-linear-gradient(45deg, rgba(255,255,255,0.012) 0px, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 5px);"></div>
+            <div style="position: absolute; inset: 0; background: radial-gradient(ellipse 80% 60% at 30% 40%, rgba(255,100,30,0.07) 0%, transparent 60%);"></div>
+            <span style="position: absolute; left: 16px; top: 16px; background: var(--bg); padding: 5px 13px; font-family: 'Archivo', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: var(--text);">Media Literacy</span>
+          </div>
+          <div style="padding-top: 24px;">
+            <div style="display: flex; align-items: center; gap: 10px; font-size: 0.78rem; color: var(--t40); margin-bottom: 12px;">
+              <time dateTime="2026-05-14">May 14, 2026</time>
+              <span aria-hidden="true">&middot;</span>
+              <span>6 min read</span>
+            </div>
+            <h3 style="font-family: 'Archivo', sans-serif; font-size: clamp(1.4rem, 2.2vw, 2.1rem); font-weight: 900; line-height: 1.05; letter-spacing: -0.02em; color: var(--text); text-wrap: balance;">
+              The algorithm isn&rsquo;t broken. It&rsquo;s working exactly as designed.
+            </h3>
+            <p style="margin-top: 16px; font-size: 1.05rem; line-height: 1.68; color: var(--t70);">
+              Every time a viral anti-trans story gets amplified and the response gets buried, people say the platform failed. Let&rsquo;s actually talk about what&rsquo;s really happening here.
+            </p>
+          </div>
+        </a>
+      </article>
+
+      <!-- Compact rows -->
+      <div style="display: flex; flex-direction: column;">
+        <a href="#" style="display: block; text-decoration: none; color: inherit; border-top: 1px solid var(--t10); padding: 26px 0 28px;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 11px; flex-wrap: wrap;">
+            <span style="font-family: 'Archivo', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: #FF4A1C;">Travel &amp; Safety</span>
+            <span style="font-size: 0.75rem; color: var(--t40);">Apr 28, 2026</span>
+            <span style="font-size: 0.75rem; color: var(--t40);">&middot;</span>
+            <span style="font-size: 0.75rem; color: var(--t40);">7 min read</span>
+          </div>
+          <h3 style="font-family: 'Archivo', sans-serif; font-size: 1.3rem; font-weight: 900; line-height: 1.1; letter-spacing: -0.015em; color: var(--text); text-wrap: balance;">
+            What trans travelers actually need to know before they book anything
+          </h3>
+          <p style="margin-top: 9px; font-size: 0.94rem; line-height: 1.62; color: var(--t70); overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+            Travel guides describe cities as &ldquo;welcoming.&rdquo; That word does a lot of work it probably shouldn&rsquo;t. Here&rsquo;s the framework I actually use before I land anywhere new.
+          </p>
+        </a>
+        <a href="#" style="display: block; text-decoration: none; color: inherit; border-top: 1px solid var(--t10); padding: 26px 0 28px;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 11px; flex-wrap: wrap;">
+            <span style="font-family: 'Archivo', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: #FF4A1C;">Representation</span>
+            <span style="font-size: 0.75rem; color: var(--t40);">Mar 17, 2026</span>
+            <span style="font-size: 0.75rem; color: var(--t40);">&middot;</span>
+            <span style="font-size: 0.75rem; color: var(--t40);">5 min read</span>
+          </div>
+          <h3 style="font-family: 'Archivo', sans-serif; font-size: 1.3rem; font-weight: 900; line-height: 1.1; letter-spacing: -0.015em; color: var(--text); text-wrap: balance;">
+            No one is saying this about the &ldquo;both sides&rdquo; problem in trans coverage
+          </h3>
+          <p style="margin-top: 9px; font-size: 0.94rem; line-height: 1.62; color: var(--t70); overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+            Media outlets frame trans issues as a debate between two equal positions. That framing isn&rsquo;t neutral. It has consequences, and the way it works is more deliberate than most people realize.
+          </p>
+        </a>
+        <a href="#" style="display: block; text-decoration: none; color: inherit; border-top: 1px solid var(--t10); padding: 26px 0 28px;">
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 11px; flex-wrap: wrap;">
+            <span style="font-family: 'Archivo', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: #FF4A1C;">Internet Culture</span>
+            <span style="font-size: 0.75rem; color: var(--t40);">Feb 3, 2026</span>
+            <span style="font-size: 0.75rem; color: var(--t40);">&middot;</span>
+            <span style="font-size: 0.75rem; color: var(--t40);">4 min read</span>
+          </div>
+          <h3 style="font-family: 'Archivo', sans-serif; font-size: 1.3rem; font-weight: 900; line-height: 1.1; letter-spacing: -0.015em; color: var(--text); text-wrap: balance;">
+            The way discourse cycles work is not accidental
+          </h3>
+          <p style="margin-top: 9px; font-size: 0.94rem; line-height: 1.62; color: var(--t70); overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">
+            Every few weeks the conversation resets to the same argument. Here&rsquo;s the infrastructure behind that, and why it keeps running.
+          </p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PLATFORMS (always dark) ─── -->
+  <section style="background: #14110F; color: #F4F0E9;">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 80px 48px 100px;">
+      <p style="font-family: 'Archivo', sans-serif; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #FF4A1C; margin-bottom: 14px;">Where else I am</p>
+      <h2 style="font-family: 'Archivo', sans-serif; font-size: clamp(1.8rem, 3.2vw, 3rem); font-weight: 900; line-height: 1.02; letter-spacing: -0.025em; max-width: 18ch; text-wrap: balance; margin-bottom: 52px;">
+        The blog is home base. The work lives everywhere you do.
+      </h2>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(244,240,233,0.08);">
+        <div style="background: #14110F; padding: 38px; display: flex; flex-direction: column; gap: 12px;">
+          <p style="font-family: 'Archivo', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: #FF4A1C;">Travel, safety, culture</p>
+          <h3 style="font-family: 'Archivo', sans-serif; font-size: 1.5rem; font-weight: 900; letter-spacing: -0.02em;">Link With Pride</h3>
+          <p style="font-size: 0.95rem; line-height: 1.65; color: rgba(244,240,233,0.58); flex: 1;">The LGBTQ+ travel platform I built for figuring out where you can actually go, and how to read a place before you land.</p>
+          <span style="font-family: 'Archivo', sans-serif; font-size: 0.84rem; font-weight: 700; color: rgba(244,240,233,0.72); margin-top: 12px;">Go there &rarr;</span>
+        </div>
+        <div style="background: #14110F; padding: 38px; display: flex; flex-direction: column; gap: 12px;">
+          <p style="font-family: 'Archivo', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: #FF4A1C;">Media literacy in real time</p>
+          <h3 style="font-family: 'Archivo', sans-serif; font-size: 1.5rem; font-weight: 900; letter-spacing: -0.02em;">@domfactcheck</h3>
+          <p style="font-size: 0.95rem; line-height: 1.65; color: rgba(244,240,233,0.58); flex: 1;">The receipts account. When a story breaks and the takes get loud, this is where I sort what&rsquo;s real from what&rsquo;s bait.</p>
+          <span style="font-family: 'Archivo', sans-serif; font-size: 0.84rem; font-weight: 700; color: rgba(244,240,233,0.72); margin-top: 12px;">Go there &rarr;</span>
+        </div>
+        <div style="background: #14110F; padding: 38px; display: flex; flex-direction: column; gap: 12px;">
+          <p style="font-family: 'Archivo', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: #FF4A1C;">Instagram, TikTok, YouTube</p>
+          <h3 style="font-family: 'Archivo', sans-serif; font-size: 1.5rem; font-weight: 900; letter-spacing: -0.02em;">@lolhidominic</h3>
+          <p style="font-size: 0.95rem; line-height: 1.65; color: rgba(244,240,233,0.58); flex: 1;">The day-to-day. Culture, commentary, and the occasional unserious detour, posted across the feeds.</p>
+          <span style="font-family: 'Archivo', sans-serif; font-size: 0.84rem; font-weight: 700; color: rgba(244,240,233,0.72); margin-top: 12px;">Go there &rarr;</span>
+        </div>
+        <div style="background: #14110F; padding: 38px; display: flex; flex-direction: column; gap: 12px;">
+          <p style="font-family: 'Archivo', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; color: #FF4A1C;">For brands and partners</p>
+          <h3 style="font-family: 'Archivo', sans-serif; font-size: 1.5rem; font-weight: 900; letter-spacing: -0.02em;">Work with me</h3>
+          <p style="font-size: 0.95rem; line-height: 1.65; color: rgba(244,240,233,0.58); flex: 1;">Sponsorships, affiliate work, and coverage across platforms, run through T-Time Media LLC.</p>
+          <span style="font-family: 'Archivo', sans-serif; font-size: 0.84rem; font-weight: 700; color: rgba(244,240,233,0.72); margin-top: 12px;">See the details &rarr;</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer style="border-top: 1px solid var(--t10); background: var(--bg-soft);">
+    <div style="max-width: 1280px; margin: 0 auto; padding: 64px 48px 52px;">
+      <div style="display: grid; grid-template-columns: 5fr 3fr 4fr; gap: 56px;">
+        <div>
+          <a href="#" style="font-family: 'Archivo', sans-serif; font-size: 1.5rem; font-weight: 900; letter-spacing: -0.04em; text-decoration: none; color: var(--text);">lolhi<span style="color: #FF4A1C;">dominic</span></a>
+          <p style="margin-top: 18px; font-family: 'Newsreader', Georgia, serif; font-style: italic; font-size: 1.1rem; line-height: 1.45; color: var(--t70); max-width: 30ch;">Reading culture out loud so the rest of us can stop guessing.</p>
+        </div>
+        <nav aria-label="Footer">
+          <p style="font-family: 'Archivo', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #FF4A1C; margin-bottom: 20px;">Pages</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 11px;">
+            <li><a href="#" style="font-family: 'Archivo', sans-serif; font-size: 0.84rem; font-weight: 500; color: var(--t70); text-decoration: none;">Writing</a></li>
+            <li><a href="#" style="font-family: 'Archivo', sans-serif; font-size: 0.84rem; font-weight: 500; color: var(--t70); text-decoration: none;">About</a></li>
+            <li><a href="#" style="font-family: 'Archivo', sans-serif; font-size: 0.84rem; font-weight: 500; color: var(--t70); text-decoration: none;">Work With Me</a></li>
+            <li><a href="#" style="font-family: 'Archivo', sans-serif; font-size: 0.84rem; font-weight: 500; color: var(--t70); text-decoration: none;">Press</a></li>
+            <li><a href="#" style="font-family: 'Archivo', sans-serif; font-size: 0.84rem; font-weight: 500; color: var(--t70); text-decoration: none;">Link With Pride</a></li>
+            <li><a href="#" style="font-family: 'Archivo', sans-serif; font-size: 0.84rem; font-weight: 500; color: var(--t70); text-decoration: none;">Contact</a></li>
+          </ul>
+        </nav>
+        <div>
+          <p style="font-family: 'Archivo', sans-serif; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #FF4A1C; margin-bottom: 20px;">Find me</p>
+          <ul style="list-style: none; display: flex; flex-direction: column; gap: 0;">
+            <li style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--t10); padding: 9px 0;"><span style="font-family: 'Archivo', sans-serif; font-size: 0.84rem; font-weight: 500; color: var(--t70);">Instagram</span><span style="font-size: 0.74rem; color: var(--t40);">@lolhidominic</span></li>
+            <li style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--t10); padding: 9px 0;"><span style="font-family: 'Archivo', sans-serif; font-size: 0.84rem; font-weight: 500; color: var(--t70);">TikTok</span><span style="font-size: 0.74rem; color: var(--t40);">@lolhidominic</span></li>
+            <li style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--t10); padding: 9px 0;"><span style="font-family: 'Archivo', sans-serif; font-size: 0.84rem; font-weight: 500; color: var(--t70);">YouTube</span><span style="font-size: 0.74rem; color: var(--t40);">@lolhidominic</span></li>
+            <li style="display: flex; justify-content: space-between; align-items: baseline; border-bottom: 1px solid var(--t10); padding: 9px 0;"><span style="font-family: 'Archivo', sans-serif; font-size: 0.84rem; font-weight: 500; color: var(--t70);">Facebook</span><span style="font-size: 0.74rem; color: var(--t40);">@domfactcheck</span></li>
+            <li style="padding-top: 12px;"><a href="#" style="font-family: 'Archivo', sans-serif; font-size: 0.84rem; font-weight: 700; color: #FF4A1C; text-decoration: none;">linkwithpride.com</a></li>
+          </ul>
+        </div>
+      </div>
+      <div style="margin-top: 48px; padding-top: 22px; border-top: 1px solid var(--t10); display: flex; justify-content: space-between; align-items: center;">
+        <p style="font-size: 0.76rem; color: var(--t40);">&copy; 2026 T-Time Media LLC. All rights reserved.</p>
+        <p style="font-family: 'Archivo', sans-serif; font-size: 0.76rem; letter-spacing: -0.01em; color: var(--t40);">lolhidominic.com</p>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{
+  &quot;$preview&quot;: { &quot;width&quot;: 1440 },
+  &quot;theme&quot;: {
+    &quot;editor&quot;: &quot;enum&quot;,
+    &quot;options&quot;: [&quot;light&quot;, &quot;dark&quot;],
+    &quot;default&quot;: &quot;light&quot;,
+    &quot;tsType&quot;: &quot;\&quot;light\&quot; | \&quot;dark\&quot;&quot;
+  }
+}">
+class Component extends DCLogic {
+  state = { theme: this.props.theme ?? "light" };
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.theme !== this.props.theme) {
+      this.setState({ theme: this.props.theme ?? "light" });
+    }
+  }
+
+  renderVals() {
+    const { theme } = this.state;
+    return {
+      theme,
+      themeLabel: theme === "light" ? "Dark" : "Light",
+      toggleTheme: () =>
+        this.setState((s) => ({ theme: s.theme === "light" ? "dark" : "light" })),
+    };
+  }
+}
+</script>
+</body>
+</html>
