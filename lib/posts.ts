@@ -1,29 +1,11 @@
 import fs from "node:fs";
 import path from "node:path";
 import readingTime from "reading-time";
-import type { Category } from "./site";
+import type { PostFrontMatter, PostMeta, Post } from "./post-types";
 
 const BLOG_DIR = path.join(process.cwd(), "content", "blog");
 
-// The front matter schema every .mdx file in content/blog must follow.
-export type PostFrontMatter = {
-  title: string;
-  excerpt: string;
-  category: Category;
-  date: string; // ISO 8601, e.g. "2026-05-12"
-  cover: string; // path under /public, e.g. "/images/blog/algorithm.jpg"
-  coverAlt: string; // real, descriptive alt text. Never decorative filler.
-  featured?: boolean;
-};
-
-export type PostMeta = PostFrontMatter & {
-  slug: string;
-  readTime: string; // derived, e.g. "6 min read"
-};
-
-export type Post = PostMeta & {
-  content: string; // raw MDX body
-};
+export type { PostFrontMatter, PostMeta, Post };
 
 function fileToSlug(filename: string): string {
   return filename.replace(/\.mdx?$/, "");
@@ -59,7 +41,6 @@ function parseFrontMatter(raw: string) {
   return { data, content: body };
 }
 
-// Read + parse a single post by slug. Returns null if it does not exist.
 export function getPost(slug: string): Post | null {
   const full = path.join(BLOG_DIR, `${slug}.mdx`);
   if (!fs.existsSync(full)) return null;
@@ -76,7 +57,6 @@ export function getPost(slug: string): Post | null {
   };
 }
 
-// All posts, newest first. Used by the blog index, home, and related lists.
 export function getAllPosts(): PostMeta[] {
   if (!fs.existsSync(BLOG_DIR)) return [];
 
@@ -87,7 +67,6 @@ export function getAllPosts(): PostMeta[] {
       const slug = fileToSlug(f);
       const post = getPost(slug);
       if (!post) return null;
-      // Drop the heavy content field for list views.
       const { content: _content, ...meta } = post;
       return meta;
     })
@@ -108,7 +87,6 @@ export function getAllSlugs(): string[] {
     .map(fileToSlug);
 }
 
-// Format an ISO date the way it reads on a card: "May 12, 2026".
 export function formatDate(iso: string): string {
   return new Date(iso).toLocaleDateString("en-US", {
     year: "numeric",

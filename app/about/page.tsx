@@ -5,10 +5,11 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "I'm Dominic. Creator-journalist, cultural translator, trans person. Here's what I cover, why I cover it, and why it matters.",
+    "I&rsquo;m Dominic. I smoke weed, travel, cook, watch movies, play games, and share what I&rsquo;m into. This is the real-life site behind LolHiDominic.",
   openGraph: {
     title: `About | ${site.shortName}`,
-    description: "Who I am, what I cover, and why I cover it.",
+    description:
+      "I&rsquo;m Dominic. I smoke weed, travel, cook, watch movies, play games, and share what I&rsquo;m into.",
     url: `${site.url}/about`,
     type: "profile",
   },
@@ -28,53 +29,34 @@ export default function AboutPage() {
 
           <div className="mt-10 space-y-7 text-lg leading-relaxed text-ink/80 dark:text-paper/80">
             <p>
-              Okay so, here&rsquo;s the thing. A lot of media that covers LGBTQ+ people is either
-              written for a straight audience explaining us, or it&rsquo;s advocacy content speaking
-              at us. Very little of it is just... talking to us. Like a smart friend who did the
-              reading and can break it down without the condescension.
+              LolHiDominic is the place I share what I actually care about. I smoke weed, cook
+              things, travel when I can, watch movies, play games, and post about the weird, honest
+              life that comes with all of it. I make content from how I live, not from a checklist.
             </p>
             <p>
-              That&rsquo;s the gap I work in. I&rsquo;m a creator-journalist and cultural
-              translator. What that means practically is I take the stories, the discourse, the
-              algorithmic weirdness, the travel safety questions, the &ldquo;wait, what is actually
-              happening with representation right now&rdquo; questions, and I answer them clearly, in
-              plain language, for people who don&rsquo;t have time to wade through seventeen think
-              pieces to figure out what&rsquo;s real.
+              I&rsquo;m Dominic. I like being visible online and building in public. This site is
+              where I put down the stuff that feels real — notes from trips, recipes I&rsquo;m
+              trying, movie reactions, gaming takes, stream ideas, and the thoughts that come with it
+              all.
             </p>
             <p>
-              I&rsquo;m trans. That&rsquo;s not a disclaimer, it&rsquo;s context. My perspective
-              comes from inside the experience, not from covering it at arm&rsquo;s length. I cover
-              trans life because I live it. I cover internet culture and media literacy because I
-              watch the machine work and I think more of us should understand how it works, not just
-              what it produces.
+              I&rsquo;m a trans guy. That&rsquo;s part of my story, but it doesn&rsquo;t define every
+              piece of content here. The things I share are built from my life, my tastes, and my
+              point of view — honest, sometimes messy, and always personal.
             </p>
 
             <blockquote className="border-l-2 border-flame pl-6 font-serif text-2xl italic leading-snug text-ink dark:text-paper">
-              Real talk: the goal has always been to help people read the world more clearly, move
-              through it more confidently, and feel less alone while doing it.
+              This is not a brand play. It&rsquo;s just Dominic being Dominic.
             </blockquote>
 
             <p>
-              I run T-Time Media LLC, which is the umbrella for everything. The writing lives here
-              at lolhidominic.com. Travel and safety content lives at{" "}
-              <a href="https://linkwithpride.com" className="text-flame hover:underline">
-                Link With Pride
-              </a>
-              . Media literacy and fact-checking drops on{" "}
-              <a href="https://instagram.com/domfactcheck" className="text-flame hover:underline">
-                @domfactcheck
-              </a>
-              . The rest of the work lives across{" "}
-              <a href="https://instagram.com/lolhidominic" className="text-flame hover:underline">
-                Instagram
-              </a>
-              , TikTok, YouTube, and Facebook under{" "}
-              <span className="font-semibold text-ink dark:text-paper">@lolhidominic</span>.
+              I run T-Time Media LLC as the umbrella for the work, but this space is really about
+              LolHiDominic. If you&rsquo;re here for travel notes, cooking experiments, weed life,
+              movie chats, gaming, or future streams, you&rsquo;re in the right place.
             </p>
 
             <p>
-              If my work helped you understand something, or feel more prepared for something, or
-              just feel less alone in something, then it did its job.
+              If something here makes you nod, laugh, or want to reach out, that means it landed.
             </p>
           </div>
 
@@ -100,11 +82,11 @@ export default function AboutPage() {
             <h2 className="eyebrow mb-5">What I cover</h2>
             <ul className="space-y-3">
               {[
-                ["Media Literacy", "How stories get framed, who controls the frame, and what to do about it."],
-                ["Trans Life", "Lived experience, not explained to outsiders."],
-                ["Internet Culture", "The discourse, the algorithms, the viral moments that matter."],
-                ["Travel & Safety", "LGBTQ+ travel, country by country, done honestly."],
-                ["Representation", "Who&rsquo;s in the story, who&rsquo;s missing, and why it matters."],
+                ["Media Literacy", "How stories get framed, what matters, and what a smart reader should notice."],
+                ["Trans Life", "A first-person perspective that brings context without over-explaining."],
+                ["Internet Culture", "What the feed and the platform make visible, and what they hide."],
+                ["Travel & Safety", "Practical guidance on trips that matter to real people, not generic ratings."],
+                ["Representation", "Who shows up in stories, who gets left out, and why that matters."],
               ].map(([topic, desc]) => (
                 <li key={topic} className="border-t border-ink/10 pt-3 dark:border-paper/10">
                   <p className="font-display text-sm font-bold text-ink dark:text-paper">{topic}</p>

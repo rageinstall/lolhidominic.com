@@ -19,7 +19,7 @@ export default function Footer() {
               <span className="text-white">lolhi</span><span className="text-blue">dominic</span>
             </Link>
             <p className="mt-4 max-w-[28ch] font-serif italic text-lg leading-snug text-ink-muted">
-              Reading culture out loud so the rest of us can stop guessing.
+              LolHiDominic: weed life, travel notes, cooking experiments, movie thoughts, and gaming plans.
             </p>
           </div>
 

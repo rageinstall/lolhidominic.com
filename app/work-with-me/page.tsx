@@ -5,11 +5,11 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Work With Me",
   description:
-    "Brand partnerships and sponsorships through T-Time Media LLC. Sponsored content, affiliate integrations, and platform coverage reaching LGBTQ+ audiences.",
+    "Partner with Dominic and LolHiDominic for honest sponsored content, travel storytelling, and platform campaigns that respect the audience.",
   openGraph: {
     title: `Work With Me | ${site.shortName}`,
     description:
-      "Sponsored content, affiliate integrations, and LGBTQ+-focused platform coverage through T-Time Media LLC.",
+      "Partner with Dominic and LolHiDominic for honest sponsored content, travel storytelling, and platform campaigns.",
     url: `${site.url}/work-with-me`,
     type: "website",
   },
@@ -55,12 +55,12 @@ export default function WorkWithMePage() {
       <header className="max-w-3xl">
         <p className="eyebrow mb-4">T-Time Media LLC</p>
         <h1 className="font-display text-display-lg font-black text-ink dark:text-paper text-balance">
-          Real reach, real audience, no filler.
+          Partner with Dominic and LolHiDominic.
         </h1>
         <p className="mt-6 max-w-prose text-lg leading-relaxed text-ink/70 dark:text-paper/70">
-          I work with brands that have something to offer LGBTQ+ people, particularly trans folk and
-          queer travelers. If your product or service genuinely fits my audience, let&rsquo;s talk.
-          If it doesn&rsquo;t, I&rsquo;ll tell you that upfront.
+          I work with brands that meaningfully fit my audience. Sponsored content, travel storytelling,
+          and platform campaigns are all done with the same straight-shooting voice, clear
+          disclosure, and audience-first standards.
         </p>
       </header>
 

@@ -1,2 +1,7 @@
 node_modules
 .next
+.incoming/
+.vscode/
+Homepage Preview.dc.html
+support.js
+tsconfig.tsbuildinfo

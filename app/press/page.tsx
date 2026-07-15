@@ -5,11 +5,11 @@ import { site } from "@/lib/site";
 export const metadata: Metadata = {
   title: "Press & Media",
   description:
-    "For journalists, podcasters, and producers. Dominic covers media literacy, internet culture, trans life, and LGBTQ+ travel. Available for interviews and expert commentary.",
+    "Book Dominic Anthony Pérignon for expert commentary and interviews. LolHiDominic brings clear perspective, sourced analysis, and a direct voice.",
   openGraph: {
     title: `Press & Media | ${site.shortName}`,
     description:
-      "For journalists, podcasters, and producers. Book Dominic for interviews and expert commentary.",
+      "Book Dominic for expert commentary and interviews. LolHiDominic brings clear perspective and direct storytelling.",
     url: `${site.url}/press`,
     type: "website",
   },
@@ -20,27 +20,27 @@ const coverageAreas = [
   {
     topic: "Media literacy & misinformation",
     detail:
-      "How stories targeting LGBTQ+ people get manufactured, spread, and what to actually do with them. Regular breakdowns via @domfactcheck.",
+      "How stories get built, how they spread, and what reporters should actually ask about them. Regular breakdowns via @domfactcheck.",
   },
   {
     topic: "Trans life and lived experience",
     detail:
-      "First-person perspective on navigating healthcare, documentation, public space, and the policy environment, without the abstract framing.",
+      "A first-person perspective on healthcare, documentation, public space, and policy, delivered without the usual abstract framing.",
   },
   {
-    topic: "Internet culture and algorithms",
+    topic: "Internet culture and platforms",
     detail:
-      "How platforms shape what stories reach queer audiences, what gets amplified, and what gets suppressed, from someone who studies the feed.",
+      "How the feed, the algorithm, and the viral moment work together, explained by someone who watches them closely.",
   },
   {
-    topic: "Representation in media and entertainment",
+    topic: "Representation in media",
     detail:
-      "What's actually changing, what's performance, and what the gap between them costs real people.",
+      "What actually changes, what is performative, and why the gap matters for the people in the story.",
   },
   {
-    topic: "LGBTQ+ travel and safety",
+    topic: "Travel and safety",
     detail:
-      "Country-by-country context for queer travelers, with specific focus on trans travelers. Based on research and lived experience via Link With Pride.",
+      "Practical country context for queer travelers, with a sharp focus on what matters in the real world.",
   },
 ];
 
@@ -50,13 +50,12 @@ export default function PressPage() {
       <header className="max-w-3xl">
         <p className="eyebrow mb-4">Press &amp; media</p>
         <h1 className="font-display text-display-lg font-black text-ink dark:text-paper text-balance">
-          Covering LGBTQ+ culture from inside it.
+          Book Dominic for commentary that cuts through the noise.
         </h1>
         <p className="mt-6 max-w-prose text-lg leading-relaxed text-ink/70 dark:text-paper/70">
-          Dominic is a creator-journalist and cultural translator available for expert commentary,
-          interviews, and commentary. He covers media literacy, trans life, internet culture, and
-          LGBTQ+ travel. He speaks plainly, cites his sources, and doesn&rsquo;t need a briefing
-          doc to sound credible.
+          Dominic is the creator behind LolHiDominic. He offers expert interviews, analysis, and
+          booked commentary with a direct, grounded voice. The work is sourced, clear, and built
+          for journalists, producers, and podcasters who need real perspective.
         </p>
       </header>
 

@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import type { PostMeta } from "@/lib/posts";
+import type { PostMeta } from "@/lib/post-types";
+import CoverWave from "./CoverWave";
 
 type BlogCardProps = {
   post: PostMeta;
@@ -42,23 +42,14 @@ export default function BlogCard({ post, feature = false, priority = false }: Bl
     <article className={`group flex flex-col rounded-card border border-rule bg-surface overflow-hidden transition-all duration-300 hover:border-blue/40 hover:-translate-y-0.5 ${feature ? "md:col-span-2" : ""}`}>
       <Link href={`/blog/${post.slug}`} className="flex flex-col flex-1">
         {/* Cover */}
-        <div className={`relative w-full overflow-hidden bg-surface-2 ${feature ? "aspect-[16/9]" : "aspect-[4/3]"}`}>
-          <Image
-            src={post.cover}
-            alt={post.coverAlt}
-            fill
-            sizes={feature ? "(min-width: 768px) 66vw, 100vw" : "(min-width: 768px) 33vw, 100vw"}
-            priority={priority}
-            className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-[1.03]"
-          />
-          {/* Category pill overlay */}
+        <CoverWave className={`relative w-full overflow-hidden ${feature ? "aspect-[16/9]" : "aspect-[4/3]"}`} category={post.category}>
           <div className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-pill border border-blue/30 bg-blue/10 px-3 py-1.5">
             <span className={`h-1.5 w-1.5 rounded-full ${dotColor}`} />
             <span className="font-mono text-[10.5px] font-medium uppercase tracking-label text-blue">
               {post.category}
             </span>
           </div>
-        </div>
+        </CoverWave>
 
         {/* Body */}
         <div className="flex flex-1 flex-col p-6">

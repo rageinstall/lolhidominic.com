@@ -6,20 +6,23 @@
 
 /* ── CSS custom properties ── */
 :root {
-  --bg:         #080c14;
-  --surface:    #0f1623;
-  --surface-2:  #141d2e;
-  --surface-3:  #1a2436;
-  --rule:       #1e2d45;
-  --hairline:   #172033;
-  --ink:        #ecf1fb;
-  --ink-soft:   #c2cce0;
-  --ink-muted:  #8896b3;
-  --ink-faint:  #525f7d;
-  --blue:       #5BCEFA;
+  --bg:         #05060a;
+  --surface:    #0b0f17;
+  --surface-2:  #111827;
+  --surface-3:  #151c2b;
+  --rule:       #15213c;
+  --hairline:   #0e1220;
+  --ink:        #F2F6FF;
+  --ink-soft:   #B4C3DE;
+  --ink-muted:  #8FA1C2;
+  --ink-faint:  #6D7AA0;
+  --matcha:     #4CFF8D;
+  --cyber:      #8C4DFF;
+  --amber:      #FFB25C;
+  --flame:      #FF4A1C;
   --pink:       #F5A9B8;
-  --accent:     var(--blue);
-  --accent-2:   var(--pink);
+  --accent:     var(--matcha);
+  --accent-2:   var(--cyber);
   --highlight:  color-mix(in oklab, var(--accent) 18%, transparent);
   --t:          200ms cubic-bezier(.2,.7,.2,1);
 }
@@ -123,7 +126,47 @@
     position: absolute; top: -4px; left: 14px;
     font-family: 'DM Serif Display', Georgia, serif;
     font-size: 80px; line-height: 1;
-    color: var(--accent); opacity: 0.85;
+    color: var(--matcha); opacity: 0.85;
+  }
+
+  .hero-panel {
+    position: relative;
+    overflow: hidden;
+    border-radius: 32px;
+    background: radial-gradient(circle at top left, rgba(76,255,141,0.12), transparent 30%), radial-gradient(circle at bottom right, rgba(140,77,255,0.11), transparent 30%), var(--surface);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+  .hero-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(5,6,10,0.85), rgba(5,6,10,0.8));
+    pointer-events: none;
+  }
+
+  .channel-card {
+    border-radius: 28px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.03);
+    transition: transform var(--t), border-color var(--t), background-color var(--t), box-shadow var(--t);
+  }
+  .channel-card:hover {
+    transform: translateY(-2px);
+    background: rgba(255,255,255,0.07);
+  }
+  .channel-card.matcha:hover { box-shadow: 0 0 60px -24px rgba(76,255,141,0.35); }
+  .channel-card.cyber:hover { box-shadow: 0 0 60px -24px rgba(140,77,255,0.35); }
+  .channel-card.amber:hover { box-shadow: 0 0 60px -24px rgba(255,178,92,0.35); }
+
+  .status-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.85rem 1rem;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.08);
+    background: rgba(255,255,255,0.04);
+    backdrop-filter: blur(16px);
   }
 
   /* Gradient title text */

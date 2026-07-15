@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import type { PostMeta } from "@/lib/posts";
+import type { PostMeta } from "@/lib/post-types";
 import { categories } from "@/lib/site";
 import BlogCard from "./BlogCard";
 

@@ -9,9 +9,9 @@ export const site = {
   org: "T-Time Media LLC",
   // One line, his voice, used in metadata + footer.
   tagline:
-    "Creator-journalist and cultural translator. I help LGBTQ+ people read culture and media clearly, travel safer, and move through the world a little freer.",
+    "Dominic sharing weed, travel, cooking, movies, and gaming from a real-life perspective.",
   description:
-    "Creator-journalist and cultural translator. Media literacy, internet culture, representation, and trans life, explained like a smart friend would.",
+    "A personal site for travel notes, weed life, cooking experiments, movie reactions, and the everyday thoughts of Dominic Anthony Pérignon.",
   email: "info@lolhidominic.com",
 };
 
