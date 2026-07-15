@@ -22,48 +22,120 @@ export const metadata: Metadata = {
 export default function HomePage() {
   const allPosts = getAllPosts();
   const featured = getFeaturedPost();
-  const recent = allPosts.filter((p) => p.slug !== featured?.slug).slice(0, 3);
+  const latestPosts = allPosts.filter((post) => post.slug !== featured?.slug).slice(0, 6);
 
   const channels = [
     {
       label: "Weed",
       slug: "weed",
       accent: "matcha",
-      description: "Strain notes, smoke sessions, and high-lifestyle moments.",
-      detail: "This lane is about the ritual, the highs, and the culture behind every smoke session.",
+      promise: "Smoke sessions, strain notes, and late-night rituals.",
+      description: "The lane for ritual, mood, and the culture behind every session.",
       categories: ["Media Literacy", "Internet Culture"],
+      anchor: "smoke-sessions",
+      badge: "Smoke",
     },
     {
       label: "Travel",
       slug: "travel",
       accent: "amber",
-      description: "City edits, late-night corners, and travel notes.",
-      detail: "A travel lane for the places I land, the risks I take, and the city stories I collect.",
+      promise: "City edits, corners, and the feeling of arriving somewhere new.",
+      description: "The lane for the places I land, the risks I take, and the stories I collect.",
       categories: ["Travel & Safety"],
+      anchor: "late-night-travel-edits",
+      badge: "Travel",
     },
     {
       label: "Cooking",
       slug: "cooking",
       accent: "matcha",
-      description: "Kitchen experiments, recipes, and food moods.",
-      detail: "Kitchen experiments that taste like home and nights spent cooking with a little chaos.",
+      promise: "Kitchen experiments that taste like late-night comfort.",
+      description: "The lane for recipes, experiments, and meals made with chaos and care.",
       categories: ["Representation", "Internet Culture"],
+      anchor: "kitchen-experiments",
+      badge: "Kitchen",
     },
     {
       label: "Movies",
       slug: "movies",
       accent: "amber",
-      description: "Film reactions, TV calls, and the stories that stick.",
-      detail: "Movie and TV takes from the couch, the theater, and wherever I’m watching next.",
+      promise: "Film takes, TV reactions, and the stories that linger.",
+      description: "The lane for couch watches, theater runs, and the movies that stay with me.",
       categories: ["Internet Culture", "Representation"],
+      anchor: "movie-takes",
+      badge: "Screen",
     },
     {
       label: "Games",
       slug: "games",
       accent: "cyber",
-      description: "Stream plans, what I&rsquo;m playing, and gear thoughts.",
-      detail: "Game sessions, stream notes, and what I’m obsessed with when the world is quiet.",
+      promise: "Stream plans, gear notes, and what I’m playing now.",
+      description: "The lane for game sessions, lore obsessions, and the plans that keep me going.",
       categories: ["Internet Culture"],
+      anchor: "game-plans",
+      badge: "Play",
+    },
+  ];
+
+  const nowItems = [
+    { title: "Currently In", value: "Tokyo 📍" },
+    { title: "Playing", value: "Cyberpunk 🎮" },
+    { title: "Strain of the Week", value: "Blue Dream 💨" },
+    { title: "Mood", value: "Curated chaos" },
+  ];
+
+  const followRoutes = [
+    {
+      title: "Want the daily chaos?",
+      label: "@lolhidominic",
+      body: "The daily feed for smoke sessions, travel notes, kitchen experiments, movies, and games.",
+      href: "https://instagram.com/lolhidominic",
+      accent: "matcha",
+    },
+    {
+      title: "Want receipts and facts energy?",
+      label: "@domfactcheck",
+      body: "The reality check lane for breaking stories, context, and the signal through the noise.",
+      href: "https://instagram.com/domfactcheck",
+      accent: "cyber",
+    },
+    {
+      title: "Want travel planning that makes sense?",
+      label: "Link With Pride",
+      body: "The travel platform built for real-world routes, safety context, and better decision-making.",
+      href: "https://linkwithpride.com",
+      accent: "amber",
+    },
+    {
+      title: "Want to work together?",
+      label: "Work with me",
+      body: "Partnerships, sponsorships, and content coverage through T-Time Media LLC.",
+      href: "/work-with-me",
+      accent: "matcha",
+      internal: true,
+    },
+  ];
+
+  const upcomingDrops = [
+    {
+      title: "Next drop",
+      label: "Tokyo corner edit",
+      body: "A travel edit built around the city, the corners, and the late-night feel.",
+    },
+    {
+      title: "Next session",
+      label: "Blue Dream notes",
+      body: "A smoke-session write-up with the vibe, the strain, and the aftermath.",
+    },
+    {
+      title: "Next experiment",
+      label: "Kitchen test #1",
+      body: "A new recipe experiment with a little chaos and a lot of flavor.",
+    },
+    {
+      title: "Next vibe",
+      label: "Cyberpunk night",
+      body: "A game-night note with settings, screenshots, and the mood I’m chasing.",
     },
   ];
 
@@ -77,149 +149,131 @@ export default function HomePage() {
           <div className="absolute right-[-8rem] top-28 h-80 w-80 rounded-full bg-[#A96AFF]/10 blur-3xl" />
         </div>
 
-        <div className="relative mx-auto max-w-7xl">
-          <div className="mb-8 flex flex-col gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm text-ink-soft shadow-[0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur">
-            <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-ink-faint">Current Vibe</span>
-            <div className="flex flex-wrap gap-4 text-xs text-ink-soft sm:items-center">
-              <span>📍 Currently In: Tokyo</span>
-              <span>🎮 Playing: Cyberpunk</span>
-              <span>💨 Strain of the Week: Blue Dream</span>
+        <div className="relative mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:items-start">
+          <div>
+            <div className="mb-8 flex flex-col gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm text-ink-soft shadow-[0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur">
+              <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-ink-faint">Current Vibe</span>
+              <div className="flex flex-wrap gap-4 text-xs text-ink-soft sm:items-center">
+                <span>📍 Tokyo</span>
+                <span>🎮 Cyberpunk</span>
+                <span>💨 Blue Dream</span>
+                <span>🌙 Curated chaos</span>
+              </div>
+            </div>
+
+            <p className="eyebrow mb-3 text-ink-soft">Now</p>
+            <h1 className="max-w-[16ch] font-display text-display-xl font-black tracking-tight text-paper md:max-w-[20ch]">
+              I’m Dominic. Tokyo nights, kitchen chaos, movie takes, and game plans.
+            </h1>
+
+            <div className="mt-6 max-w-2xl space-y-5 text-xl leading-relaxed text-ink-soft">
+              <p>
+                I write from the middle of the mess: a smoke session, a late-night travel edit, a recipe
+                that worked better than expected, or a game I can’t stop thinking about.
+              </p>
+              <p className="text-sm text-ink-muted">
+                This is the home for the parts of life that feel cinematic, real, and worth sharing.
+              </p>
+            </div>
+
+            <div className="mt-10 flex flex-wrap gap-4">
+              <Link
+                href="/blog"
+                className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-paper transition hover:border-amber hover:text-amber"
+              >
+                Explore the feed
+              </Link>
+              <Link
+                href="#lanes"
+                className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-paper transition hover:border-matcha hover:text-matcha"
+              >
+                Pick a lane
+              </Link>
+              <Link
+                href="#routes"
+                className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-paper transition hover:border-cyber hover:text-cyber"
+              >
+                Follow routes
+              </Link>
             </div>
           </div>
 
-          <p className="eyebrow mb-3 text-ink-soft">Curated Chaos</p>
-          <h1 className="max-w-[18ch] font-display text-display-xl font-black tracking-tight text-paper md:max-w-[24ch]">
-            Curated chaos. Chasing stories, flavors, and framerates.
-          </h1>
-
-          <div className="mt-6 max-w-2xl space-y-5 text-xl leading-relaxed text-ink-soft">
-            <p>
-              I&rsquo;m Dominic. I smoke weed, cook, travel, watch movies, and play games — and I
-              share the messy, cinematic moments that come with living out loud.
-            </p>
-            <p className="text-sm text-ink-muted">
-              This is a personal channel guide for the things I actually care about: late-night
-              travel edits, kitchen experiments, strain vibes, stream plans, and movie takes.
-            </p>
-          </div>
-
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Link
-              href="/blog"
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-paper transition hover:border-amber hover:text-amber"
-            >
-              Explore the feed
-            </Link>
-            <Link
-              href="/about"
-              className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-paper transition hover:border-matcha hover:text-matcha"
-            >
-              Meet Dominic
-            </Link>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {nowItems.map((item) => (
+              <div key={item.title} className="rounded-[24px] border border-white/10 bg-white/5 p-4 backdrop-blur">
+                <p className="eyebrow text-ink-faint">{item.title}</p>
+                <p className="mt-2 font-display text-xl font-semibold text-paper">{item.value}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-7xl px-4 py-12 md:px-8 md:py-20">
-        <div className="mb-8 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
+      <section id="lanes" className="mx-auto max-w-7xl px-4 py-16 md:px-8 md:py-24">
+        <div className="mb-8 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div>
-            <p className="eyebrow mb-3">Channel Selector</p>
+            <p className="eyebrow mb-3">Choose your route</p>
             <h2 className="font-display text-[clamp(2rem,4vw,3rem)] font-black text-ink dark:text-paper">
               Pick a lane or orbit them all.
             </h2>
           </div>
+          <div className="flex flex-wrap gap-2 rounded-full border border-white/10 bg-surface/70 p-2">
+            <div className="rounded-full border border-matcha/30 bg-matcha/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-matcha">
+              Pick a lane
+            </div>
+            <div className="rounded-full border border-white/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.24em] text-ink-muted">
+              Orbit them all
+            </div>
+          </div>
         </div>
 
-        <div className="grid gap-3 md:grid-cols-5">
-          {channels.map((channel) => (
-            <Link
-              key={channel.slug}
-              href={`#${channel.slug}`}
-              className={`group rounded-[28px] border border-white/10 bg-surface p-5 text-sm text-ink-soft transition duration-300 hover:-translate-y-1 hover:border-opacity-40 hover:bg-[#0F1320] ${
-                channel.accent === "matcha"
-                  ? "shadow-[0_0_60px_-30px_rgba(76,255,141,0.35)]"
-                  : channel.accent === "cyber"
-                  ? "shadow-[0_0_60px_-30px_rgba(140,77,255,0.35)]"
-                  : "shadow-[0_0_60px_-30px_rgba(255,178,92,0.35)]"
-              }`}
-            >
-              <span className="mb-4 inline-flex rounded-full bg-white/5 px-3 py-1 text-[10px] uppercase tracking-[0.3em] text-ink-faint">
-                {channel.label}
-              </span>
-              <h3 className="font-display text-lg font-semibold text-paper">{channel.label}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-ink-muted">{channel.description}</p>
-              <div className="mt-5 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.24em] text-ink-faint">
-                <span>Open channel</span>
-                <span aria-hidden="true">→</span>
-              </div>
-            </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-7xl px-4 pb-16 md:px-8 md:pb-24">
-        <div className="grid gap-4">
+        <div className="grid gap-4 lg:grid-cols-2 xl:grid-cols-3">
           {channels.map((channel) => {
-            const previewPosts = allPosts
-              .filter((post) => channel.categories.includes(post.category))
-              .slice(0, 2);
+            const previewPosts = allPosts.filter((post) => channel.categories.includes(post.category)).slice(0, 1);
+            const previewPost = previewPosts[0] || allPosts[0] || null;
 
             return (
               <article
-                id={channel.slug}
                 key={channel.slug}
-                className={`rounded-[28px] border border-white/10 bg-surface p-6 text-sm text-ink-soft shadow-[0_0_0_1px_rgba(255,255,255,0.04)] transition-colors duration-300 ${
+                id={channel.anchor}
+                className={`group rounded-[32px] border border-white/10 bg-gradient-to-br p-6 text-sm text-ink-soft transition duration-300 hover:-translate-y-1 hover:border-opacity-40 ${
                   channel.accent === "matcha"
-                    ? "hover:border-matcha/40"
+                    ? "from-matcha/15 via-matcha/8 to-[#07110a]"
                     : channel.accent === "cyber"
-                    ? "hover:border-cyber/40"
-                    : "hover:border-amber/40"
+                    ? "from-cyber/15 via-cyber/8 to-[#0b061f]"
+                    : "from-amber/15 via-amber/8 to-[#160b06]"
                 }`}
               >
-                <div className="flex flex-col gap-3 sm:flex-row sm:justify-between sm:items-start">
-                  <div>
-                    <span className="eyebrow mb-2 block text-ink-soft">{channel.label}</span>
-                    <h3 className="font-display text-2xl font-black text-paper">{channel.label} lane</h3>
-                  </div>
-                  <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-[11px] uppercase tracking-[0.26em] text-ink-faint">
-                    {previewPosts.length > 0 ? "Featured writing" : "Fresh lane"}
+                <div className="flex items-center justify-between gap-3">
+                  <span className="rounded-full border border-white/10 bg-black/20 px-3 py-1 text-[10px] uppercase tracking-[0.3em] text-ink-faint">
+                    {channel.badge}
                   </span>
+                  <span className="text-[11px] uppercase tracking-[0.24em] text-ink-faint">Portal</span>
                 </div>
-                <p className="mt-4 max-w-2xl leading-relaxed text-ink-muted">{channel.detail}</p>
 
-                {previewPosts.length > 0 ? (
-                  <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                    {previewPosts.map((post) => (
-                      <Link
-                        key={post.slug}
-                        href={`/blog/${post.slug}`}
-                        className="rounded-[20px] border border-white/10 bg-[#090d14] p-5 transition hover:border-current"
-                      >
-                        <p className="font-display text-xs uppercase tracking-[0.28em] text-ink-faint">{post.category}</p>
-                        <h4 className="mt-3 font-display text-lg font-semibold text-paper">{post.title}</h4>
-                      </Link>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="mt-8 rounded-[20px] border border-white/10 bg-[#090d14] p-6 text-sm text-ink-muted">
-                    Nothing published in this lane yet. Browse the writing feed for the latest updates.
-                  </div>
-                )}
+                <h3 className="mt-6 font-display text-2xl font-semibold text-paper">{channel.label}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-ink-soft">{channel.promise}</p>
 
-                <div className="mt-6 flex flex-wrap gap-3">
-                  <Link
-                    href="/blog"
-                    className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-paper transition hover:border-matcha hover:text-matcha"
-                  >
-                    Explore writing
-                  </Link>
-                  <Link
-                    href="/blog"
-                    className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-paper transition hover:border-amber hover:text-amber"
-                  >
-                    All posts
-                  </Link>
+                <div className="mt-6 rounded-[20px] border border-white/10 bg-black/20 p-4">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-ink-faint">Latest in this lane</p>
+                  {previewPost ? (
+                    <>
+                      <h4 className="mt-3 font-display text-lg font-semibold text-paper">{previewPost.title}</h4>
+                      <p className="mt-2 text-sm text-ink-muted">{previewPost.excerpt}</p>
+                    </>
+                  ) : (
+                    <p className="mt-3 text-sm text-ink-muted">Fresh lane. The first piece is on the way.</p>
+                  )}
                 </div>
+
+                <p className="mt-6 text-sm leading-relaxed text-ink-muted">{channel.description}</p>
+
+                <Link
+                  href={`/blog${previewPost ? `/${previewPost.slug}` : ""}`}
+                  className="mt-8 inline-flex items-center gap-2 text-sm font-semibold uppercase tracking-[0.24em] text-paper transition group-hover:translate-x-1"
+                >
+                  Enter {channel.label} <span aria-hidden="true">→</span>
+                </Link>
               </article>
             );
           })}
@@ -230,28 +284,26 @@ export default function HomePage() {
         <div className="rule" />
       </div>
 
-      {/* Featured + recent */}
-      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28" aria-labelledby="writing-heading">
-        <div className="mb-12 flex items-end justify-between gap-6">
+      <section id="latest" className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28" aria-labelledby="writing-heading">
+        <div className="mb-10 flex flex-col gap-5 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="eyebrow mb-3">Latest</p>
             <h2 id="writing-heading" className="font-display text-display-md font-extrabold text-ink dark:text-paper">
-              What I&rsquo;ve been getting into
+              Latest in your orbit.
             </h2>
           </div>
-          <Link
-            href="/blog"
-            className="hidden shrink-0 font-display text-sm font-semibold text-flame hover:underline md:block"
-          >
+          <Link href="/blog" className="font-display text-sm font-semibold text-flame hover:underline">
             All writing &rarr;
           </Link>
         </div>
 
         {featured ? (
-          <div className="grid gap-x-8 gap-y-12 md:grid-cols-2">
-            <BlogCard post={featured} feature priority />
-            <div className="grid gap-8">
-              {recent.map((post) => (
+          <div className="grid gap-8 xl:grid-cols-[1.2fr_0.8fr]">
+            <div className="rounded-[32px] border border-white/10 bg-surface p-4">
+              <BlogCard post={featured} feature priority />
+            </div>
+            <div className="space-y-4">
+              {latestPosts.map((post) => (
                 <CompactRow key={post.slug} post={post} />
               ))}
             </div>
@@ -261,45 +313,54 @@ export default function HomePage() {
             First pieces are being written. Worth the wait.
           </p>
         )}
-
-        <Link href="/blog" className="mt-12 inline-block font-display text-sm font-semibold text-flame hover:underline md:hidden">
-          All writing &rarr;
-        </Link>
       </section>
 
-      {/* Platforms */}
-      <section className="bg-ink text-paper dark:bg-night-soft">
-        <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-          <p className="eyebrow mb-3">Where else I am</p>
-          <h2 className="max-w-[20ch] font-display text-display-md font-extrabold text-balance">
-            The blog is home base. The work lives everywhere you do.
+      <section id="coming-up" className="mx-auto max-w-7xl px-5 pb-20 md:px-8 md:pb-28">
+        <div className="mb-8">
+          <p className="eyebrow mb-3">What’s to come</p>
+          <h2 className="font-display text-display-md font-extrabold text-ink dark:text-paper">
+            Coming up soon.
           </h2>
-          <div className="mt-12 grid gap-px overflow-hidden border border-paper/15 sm:grid-cols-2">
-            <PlatformCard
-              href="https://linkwithpride.com"
-              kicker="Travel, safety, culture"
-              title="Link With Pride"
-              body="The LGBTQ+ travel platform I built for figuring out where you can actually go, and how to read a place before you land."
-            />
-            <PlatformCard
-              href="https://instagram.com/domfactcheck"
-              kicker="Media literacy in real time"
-              title="@domfactcheck"
-              body="The receipts account. When a story breaks and the takes get loud, this is where I sort what's real from what's bait."
-            />
-            <PlatformCard
-              href="https://instagram.com/lolhidominic"
-              kicker="Instagram, TikTok, YouTube"
-              title="@lolhidominic"
-              body="The day-to-day. Weed life, travel notes, cooking experiments, movie takes, and gaming plans."
-            />
-            <PlatformCard
-              href="/work-with-me"
-              kicker="For brands and partners"
-              title="Work with me"
-              body="Sponsorships, affiliate work, and coverage across platforms, run through T-Time Media LLC."
-              internal
-            />
+        </div>
+
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {upcomingDrops.map((item) => (
+            <div key={item.label} className="rounded-[24px] border border-white/10 bg-surface p-6">
+              <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-ink-faint">{item.title}</p>
+              <h3 className="mt-3 font-display text-xl font-semibold text-paper">{item.label}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-ink-muted">{item.body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="about" className="mx-auto max-w-7xl px-5 pb-20 md:px-8 md:pb-28">
+        <div className="grid gap-6 rounded-[32px] border border-white/10 bg-surface p-8 lg:grid-cols-[1.1fr_0.9fr] lg:p-10">
+          <div>
+            <p className="eyebrow mb-3">About Dominic</p>
+            <h2 className="font-display text-display-md font-extrabold text-ink dark:text-paper">
+              Smoke sessions, kitchen experiments, and late-night travel edits.
+            </h2>
+            <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-muted">
+              The bio is the map. Follow the routes that fit your mood and you’ll find the right lane for the next thing I’m making.
+            </p>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <Link href="#smoke-sessions" className="rounded-full border border-matcha/20 bg-matcha/10 px-4 py-2 text-sm font-semibold text-matcha">
+                Smoke sessions
+              </Link>
+              <Link href="#kitchen-experiments" className="rounded-full border border-amber/20 bg-amber/10 px-4 py-2 text-sm font-semibold text-amber">
+                Kitchen experiments
+              </Link>
+              <Link href="#late-night-travel-edits" className="rounded-full border border-cyber/20 bg-cyber/10 px-4 py-2 text-sm font-semibold text-cyber">
+                Late-night travel edits
+              </Link>
+            </div>
+          </div>
+
+          <div id="routes" className="grid gap-4 sm:grid-cols-2">
+            {followRoutes.map((route) => (
+              <RouteCard key={route.label} {...route} />
+            ))}
           </div>
         </div>
       </section>
@@ -309,48 +370,58 @@ export default function HomePage() {
 
 function CompactRow({ post }: { post: PostMeta }) {
   return (
-    <Link href={`/blog/${post.slug}`} className="group block border-t border-ink/10 pt-6 dark:border-paper/10">
-      <div className="flex items-center gap-3 text-xs text-ink/50 dark:text-paper/50">
+    <Link href={`/blog/${post.slug}`} className="group block rounded-[24px] border border-white/10 bg-surface/80 p-5 transition hover:-translate-y-0.5 hover:border-white/20">
+      <div className="flex flex-wrap items-center gap-2 text-xs text-ink/50 dark:text-paper/50">
         <span className="font-display font-semibold uppercase tracking-label text-flame">{post.category}</span>
         <span aria-hidden="true">&middot;</span>
         <time dateTime={post.date}>{formatDate(post.date)}</time>
         <span aria-hidden="true">&middot;</span>
         <span>{post.readTime}</span>
       </div>
-      <h3 className="mt-2 font-display text-xl font-bold tracking-tight text-ink decoration-flame decoration-2 underline-offset-4 group-hover:underline dark:text-paper md:text-2xl text-balance">
+      <h3 className="mt-3 font-display text-xl font-bold tracking-tight text-ink decoration-flame decoration-2 underline-offset-4 group-hover:underline dark:text-paper md:text-[1.25rem] text-balance">
         {post.title}
       </h3>
+      <p className="mt-3 text-sm leading-relaxed text-ink-muted">{post.excerpt}</p>
     </Link>
   );
 }
 
-function PlatformCard({
-  href,
-  kicker,
+function RouteCard({
   title,
+  label,
   body,
+  href,
+  accent,
   internal = false,
 }: {
-  href: string;
-  kicker: string;
   title: string;
+  label: string;
   body: string;
+  href: string;
+  accent: string;
   internal?: boolean;
 }) {
+  const accentClasses =
+    accent === "cyber"
+      ? "border-cyber/20 bg-cyber/10 text-cyber"
+      : accent === "amber"
+      ? "border-amber/20 bg-amber/10 text-amber"
+      : "border-matcha/20 bg-matcha/10 text-matcha";
+
   const inner = (
-    <div className="group flex h-full flex-col bg-ink p-8 transition-colors hover:bg-night-soft dark:bg-night dark:hover:bg-night-soft">
-      <p className="font-display text-xs font-semibold uppercase tracking-label text-flame">{kicker}</p>
-      <h3 className="mt-3 font-display text-2xl font-extrabold tracking-tight text-paper">{title}</h3>
-      <p className="mt-3 flex-1 text-paper/65">{body}</p>
-      <span className="mt-6 font-display text-sm font-semibold text-paper/80 transition-transform group-hover:translate-x-1">
-        {internal ? "See the details" : "Go there"} &rarr;
+    <div className="group flex h-full flex-col rounded-[24px] border border-white/10 bg-[#090d14] p-5 transition hover:border-white/20">
+      <p className="font-mono text-[10px] uppercase tracking-[0.28em] text-ink-faint">{title}</p>
+      <h3 className={`mt-3 font-display text-xl font-semibold ${accentClasses}`}>{label}</h3>
+      <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-muted">{body}</p>
+      <span className="mt-6 text-sm font-semibold uppercase tracking-[0.24em] text-paper transition group-hover:translate-x-1">
+        {internal ? "See the route" : "Follow"} &rarr;
       </span>
     </div>
   );
 
   return internal ? (
-    <Link href={href as never}>{inner}</Link>
+    <Link href={href}>{inner}</Link>
   ) : (
-    <a href={href}>{inner}</a>
+    <a href={href} target="_blank" rel="noreferrer noopener">{inner}</a>
   );
 }
