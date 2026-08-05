@@ -78,7 +78,7 @@ export default function HomePage() {
   ];
 
   const nowItems = [
-    { title: "Currently In", value: "Tokyo 📍" },
+    { title: "Currently In", value: "Los Angeles 📍" },
     { title: "Playing", value: "Cyberpunk 🎮" },
     { title: "Strain of the Week", value: "Blue Dream 💨" },
     { title: "Mood", value: "Curated chaos" },
@@ -119,7 +119,7 @@ export default function HomePage() {
   const upcomingDrops = [
     {
       title: "Next drop",
-      label: "Tokyo corner edit",
+      label: "Los Angeles corner edit",
       body: "A travel edit built around the city, the corners, and the late-night feel.",
     },
     {
@@ -154,7 +154,7 @@ export default function HomePage() {
             <div className="mb-8 flex flex-col gap-3 rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm text-ink-soft shadow-[0_0_0_1px_rgba(255,255,255,0.04)] backdrop-blur">
               <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-ink-faint">Current Vibe</span>
               <div className="flex flex-wrap gap-4 text-xs text-ink-soft sm:items-center">
-                <span>📍 Tokyo</span>
+                <span>📍 Los Angeles</span>
                 <span>🎮 Cyberpunk</span>
                 <span>💨 Blue Dream</span>
                 <span>🌙 Curated chaos</span>
@@ -163,7 +163,7 @@ export default function HomePage() {
 
             <p className="eyebrow mb-3 text-ink-soft">Now</p>
             <h1 className="max-w-[16ch] font-display text-display-xl font-black tracking-tight text-paper md:max-w-[20ch]">
-              I’m Dominic. Tokyo nights, kitchen chaos, movie takes, and game plans.
+              I’m Dominic. Los Angeles nights, kitchen chaos, movie takes, and game plans.
             </h1>
 
             <div className="mt-6 max-w-2xl space-y-5 text-xl leading-relaxed text-ink-soft">
