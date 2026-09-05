@@ -143,4 +143,5 @@ npm run start   # serve production build
 ```
 
 Images in `public/images/blog/` are served statically. Add real covers matching the `cover` paths in each MDX file before going to production.
+
 # LolHiDominic
