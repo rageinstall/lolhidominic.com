@@ -22,18 +22,6 @@ const config: Config = {
           soft: "#E9E5DB",
           deep: "#D5CFC0",
         },
-        matcha: {
-          DEFAULT: "#4CFF8D",
-          soft: "#9AFFBD",
-        },
-        cyber: {
-          DEFAULT: "#8C4DFF",
-          soft: "#C89CFF",
-        },
-        amber: {
-          DEFAULT: "#FFB25C",
-          soft: "#FFD59C",
-        },
         flame: {
           DEFAULT: "#FF4A1C",
           deep: "#D63A12",
@@ -54,8 +42,6 @@ const config: Config = {
         "ink-soft": "#b4c3de",
         "ink-muted": "#8fa1c2",
         "ink-faint": "#6d7aa0",
-        blue: "#5BCEFA",
-        pink: "#F5A9B8",
       },
       fontFamily: {
         display: ["var(--font-serif)", "Georgia", "serif"],

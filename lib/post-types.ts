@@ -8,14 +8,6 @@ export type PostFrontMatter = {
   cover: string;
   coverAlt: string;
   featured?: boolean;
-  reviewScore?: number;
-  vibe?: string;
-  timeInvestment?: string;
-  flavorProfile?: string;
-  potency?: string;
-  pairing?: string;
-  terpenes?: string;
-  tags?: string[];
 };
 
 export type PostMeta = PostFrontMatter & {

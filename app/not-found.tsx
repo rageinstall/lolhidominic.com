@@ -1,8 +1,10 @@
 import Link from "next/link";
 
 const helpfulLinks = [
-  { label: "Writing", href: "/blog" },
   { label: "About Dominic", href: "/about" },
+  { label: "Work", href: "/work" },
+  { label: "T-Time Media", href: "/t-time-media" },
+  { label: "Writing", href: "/blog" },
   { label: "Work With Me", href: "/work-with-me" },
   { label: "Press", href: "/press" },
   { label: "Link With Pride", href: "/link-with-pride" },
@@ -26,7 +28,7 @@ export default function NotFound() {
           <Link
             key={link.href}
             href={link.href as Parameters<typeof Link>[0]["href"]}
-            className="bg-bg px-6 py-5 font-display text-lg font-bold text-white transition-colors hover:bg-surface hover:text-blue"
+            className="bg-bg px-6 py-5 font-display text-lg font-bold text-white transition-colors hover:bg-surface hover:text-flame"
           >
             {link.label}
           </Link>

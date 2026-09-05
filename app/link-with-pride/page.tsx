@@ -37,13 +37,13 @@ export default function LinkWithPridePage() {
   return (
     <>
       {/* Hero */}
-      <section className="bg-ink text-paper">
-        <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
+      <section className="bg-bg text-ink">
+        <div className="mx-auto max-w-[1320px] px-6 py-20 md:px-8 md:py-28">
           <p className="eyebrow mb-6 text-flame">A T-Time Media platform</p>
-          <h1 className="max-w-[18ch] font-display text-display-xl font-black text-balance">
+          <h1 className="max-w-[18ch] font-display text-[clamp(3rem,7vw,6rem)] font-black leading-[0.95] tracking-[-0.04em] text-white text-balance">
             Know before you go. Actually know.
           </h1>
-          <p className="mt-8 max-w-prose text-xl leading-relaxed text-paper/80">
+          <p className="mt-8 max-w-prose text-xl leading-relaxed text-ink-muted">
             Link With Pride is the LGBTQ+ travel platform I built because the existing options
             weren&rsquo;t honest enough. It&rsquo;s not a list of &ldquo;gay-friendly&rdquo; spots.
             It&rsquo;s a real read on what LGBTQ+ people, especially trans travelers, actually need
@@ -51,7 +51,7 @@ export default function LinkWithPridePage() {
           </p>
           <a
             href="https://linkwithpride.com"
-            className="mt-10 inline-block bg-flame px-8 py-4 font-display text-sm font-bold uppercase tracking-label text-paper transition-colors hover:bg-flame-deep"
+            className="mt-10 inline-block rounded-full bg-flame px-8 py-4 font-display text-sm font-bold uppercase tracking-label text-white transition-colors hover:bg-flame-deep"
           >
             Go to Link With Pride &rarr;
           </a>
@@ -59,26 +59,26 @@ export default function LinkWithPridePage() {
       </section>
 
       {/* What it covers */}
-      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28" aria-labelledby="pillars-heading">
+      <section className="mx-auto max-w-[1320px] px-6 py-20 md:px-8 md:py-28 bg-bg" aria-labelledby="pillars-heading">
         <h2 id="pillars-heading" className="sr-only">What Link With Pride covers</h2>
-        <div className="grid gap-px bg-ink/10 dark:bg-paper/10 md:grid-cols-3">
+        <div className="grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-3">
           {pillars.map((p) => (
-            <div key={p.title} className="flex flex-col bg-paper p-8 dark:bg-night">
+            <div key={p.title} className="flex flex-col bg-bg p-8">
               <p className="eyebrow mb-3">{p.kicker}</p>
-              <h3 className="font-display text-xl font-extrabold tracking-tight text-ink dark:text-paper">
+              <h3 className="font-display text-xl font-extrabold tracking-tight text-white">
                 {p.title}
               </h3>
-              <p className="mt-4 text-ink/70 dark:text-paper/70 leading-relaxed">{p.body}</p>
+              <p className="mt-4 text-ink-muted leading-relaxed">{p.body}</p>
             </div>
           ))}
         </div>
       </section>
 
       {/* Why it exists */}
-      <section className="border-y border-ink/10 dark:border-paper/10">
-        <div className="mx-auto max-w-3xl px-5 py-20 md:px-8 md:py-28">
+      <section className="border-y border-white/10 bg-surface">
+        <div className="mx-auto max-w-3xl px-6 py-20 md:px-8 md:py-28">
           <p className="eyebrow mb-5">Why it exists</p>
-          <div className="space-y-7 text-lg leading-relaxed text-ink/80 dark:text-paper/80">
+          <div className="space-y-7 text-lg leading-relaxed text-ink-muted">
             <p>
               Here&rsquo;s what&rsquo;s really happening with LGBTQ+ travel content: most of it is
               optimized for the person who&rsquo;s never had to worry. Lists of cute bars, &ldquo;welcoming&rdquo; resorts, and cities described as
@@ -99,7 +99,7 @@ export default function LinkWithPridePage() {
 
           <a
             href="https://linkwithpride.com"
-            className="mt-10 inline-block border border-ink px-8 py-4 font-display text-sm font-bold uppercase tracking-label text-ink transition-colors hover:bg-ink hover:text-paper dark:border-paper dark:text-paper dark:hover:bg-paper dark:hover:text-ink"
+            className="mt-10 inline-block rounded-full border border-white/25 px-8 py-4 font-display text-sm font-bold uppercase tracking-label text-white transition-colors hover:border-flame hover:text-flame"
           >
             Visit the platform
           </a>
@@ -107,13 +107,13 @@ export default function LinkWithPridePage() {
       </section>
 
       {/* For brands */}
-      <section className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28" aria-labelledby="brands-heading">
+      <section className="mx-auto max-w-[1320px] px-6 py-20 md:px-8 md:py-28 bg-bg" aria-labelledby="brands-heading">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <div>
-            <h2 id="brands-heading" className="font-display text-display-md font-extrabold text-ink dark:text-paper text-balance">
+            <h2 id="brands-heading" className="font-display text-4xl font-black tracking-tight text-white md:text-5xl text-balance">
               Travel brands, this one&rsquo;s for you.
             </h2>
-            <p className="mt-5 text-lg leading-relaxed text-ink/70 dark:text-paper/70">
+            <p className="mt-5 text-lg leading-relaxed text-ink-muted">
               Link With Pride is the right placement for travel companies, booking platforms, travel
               insurance, and safety-adjacent products that serve LGBTQ+ travelers. The audience
               is engaged, specific, and actively planning.
@@ -125,16 +125,16 @@ export default function LinkWithPridePage() {
               See partnership options &rarr;
             </a>
           </div>
-          <div className="grid gap-px bg-ink/10 dark:bg-paper/10">
+          <div className="grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10">
             {[
               ["Best fit", "Travel, booking, insurance, gear, safety tools"],
               ["Audience", "LGBTQ+ adults actively planning travel"],
               ["Formats", "Editorial coverage, affiliate, sponsored guides"],
               ["Platform", "linkwithpride.com + cross-posting to social"],
             ].map(([label, value]) => (
-              <div key={label} className="flex flex-col bg-paper px-6 py-4 dark:bg-night sm:flex-row sm:justify-between">
-                <span className="font-display text-sm font-semibold text-ink/60 dark:text-paper/60">{label}</span>
-                <span className="font-display text-sm font-bold text-ink dark:text-paper">{value}</span>
+              <div key={label} className="flex flex-col bg-bg px-6 py-4 sm:flex-row sm:justify-between">
+                <span className="font-display text-sm font-semibold text-ink-faint">{label}</span>
+                <span className="font-display text-sm font-bold text-white">{value}</span>
               </div>
             ))}
           </div>

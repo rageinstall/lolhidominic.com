@@ -2,28 +2,11 @@
 
 import Link from "next/link";
 import type { PostMeta } from "@/lib/post-types";
-import CoverWave from "./CoverWave";
 
 type BlogCardProps = {
   post: PostMeta;
   feature?: boolean;
   priority?: boolean;
-};
-
-// Accent alternates blue/pink by category index — keeps variety without randomness.
-const accentByCategory: Record<string, string> = {
-  "Media Literacy":  "text-blue",
-  "Internet Culture":"text-blue",
-  "Trans Life":      "text-pink",
-  "Travel & Safety": "text-pink",
-  "Representation":  "text-blue",
-};
-const dotByCategory: Record<string, string> = {
-  "Media Literacy":  "bg-blue shadow-[0_0_6px_#5BCEFA]",
-  "Internet Culture":"bg-blue shadow-[0_0_6px_#5BCEFA]",
-  "Trans Life":      "bg-pink shadow-[0_0_6px_#F5A9B8]",
-  "Travel & Safety": "bg-pink shadow-[0_0_6px_#F5A9B8]",
-  "Representation":  "bg-blue shadow-[0_0_6px_#5BCEFA]",
 };
 
 function formatDate(iso: string): string {
@@ -35,21 +18,19 @@ function formatDate(iso: string): string {
 }
 
 export default function BlogCard({ post, feature = false, priority = false }: BlogCardProps) {
-  const accentText = accentByCategory[post.category] ?? "text-blue";
-  const dotColor   = dotByCategory[post.category]   ?? "bg-blue shadow-[0_0_6px_#5BCEFA]";
-
   return (
-    <article className={`group flex flex-col rounded-card border border-rule bg-surface overflow-hidden transition-all duration-300 hover:border-blue/40 hover:-translate-y-0.5 ${feature ? "md:col-span-2" : ""}`}>
+    <article className={`group flex flex-col rounded-card border border-rule bg-surface overflow-hidden transition-all duration-300 hover:border-flame/40 hover:-translate-y-0.5 ${feature ? "md:col-span-2" : ""}`}>
       <Link href={`/blog/${post.slug}`} className="flex flex-col flex-1">
         {/* Cover */}
-        <CoverWave className={`relative w-full overflow-hidden ${feature ? "aspect-[16/9]" : "aspect-[4/3]"}`} category={post.category}>
-          <div className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-pill border border-blue/30 bg-blue/10 px-3 py-1.5">
-            <span className={`h-1.5 w-1.5 rounded-full ${dotColor}`} />
-            <span className="font-mono text-[10.5px] font-medium uppercase tracking-label text-blue">
+        <div className={`relative w-full overflow-hidden bg-surface2 ${feature ? "aspect-[16/9]" : "aspect-[4/3]"}`}>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,74,28,0.12),transparent_45%)]" />
+          <div className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-pill border border-flame/30 bg-flame/10 px-3 py-1.5">
+            <span className="h-1.5 w-1.5 rounded-full bg-flame" />
+            <span className="font-mono text-[10.5px] font-medium uppercase tracking-label text-flame">
               {post.category}
             </span>
           </div>
-        </CoverWave>
+        </div>
 
         {/* Body */}
         <div className="flex flex-1 flex-col p-6">
@@ -60,7 +41,7 @@ export default function BlogCard({ post, feature = false, priority = false }: Bl
           </div>
 
           <h3
-            className={`font-display font-semibold tracking-tight text-white text-balance transition-colors group-hover:text-blue ${
+            className={`font-display font-semibold tracking-tight text-white text-balance transition-colors group-hover:text-flame ${
               feature ? "text-[clamp(1.4rem,2.2vw,2rem)]" : "text-[1.2rem]"
             }`}
             style={{ lineHeight: "1.12", letterSpacing: "-0.015em" }}
@@ -68,7 +49,7 @@ export default function BlogCard({ post, feature = false, priority = false }: Bl
             {post.title}
           </h3>
 
-          <span className={`mt-4 font-mono text-[11.5px] font-medium ${accentText}`}>
+          <span className="mt-4 font-mono text-[11.5px] font-medium text-flame">
             Read more &rarr;
           </span>
         </div>

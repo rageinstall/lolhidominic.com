@@ -9,7 +9,7 @@ const subjects = [
 ];
 
 const fieldBase =
-  "w-full rounded-[10px] border border-rule bg-surface px-4 py-3 font-sans text-[0.9rem] text-ink placeholder:text-ink-faint outline-none transition-all focus:border-blue focus:ring-2 focus:ring-blue/20";
+  "w-full rounded-[10px] border border-rule bg-surface px-4 py-3 font-sans text-[0.9rem] text-ink placeholder:text-ink-faint outline-none transition-all focus:border-flame focus:ring-2 focus:ring-flame/20";
 
 const labelBase =
   "block font-mono text-[10.5px] font-medium uppercase tracking-label text-ink-faint mb-2";
@@ -29,9 +29,9 @@ export default function ContactForm() {
         role="status"
         aria-live="polite"
       >
-        <div className="mb-3 inline-flex items-center gap-2 rounded-pill border border-blue/30 bg-blue/10 px-3 py-1">
-          <span className="h-1.5 w-1.5 rounded-full bg-blue shadow-[0_0_6px_#5BCEFA]" />
-          <span className="font-mono text-[10.5px] font-medium uppercase tracking-label text-blue">Got it</span>
+        <div className="mb-3 inline-flex items-center gap-2 rounded-pill border border-flame/30 bg-flame/10 px-3 py-1">
+          <span className="h-1.5 w-1.5 rounded-full bg-flame" />
+          <span className="font-mono text-[10.5px] font-medium uppercase tracking-label text-flame">Got it</span>
         </div>
         <p className="font-display text-2xl font-semibold text-ink" style={{ letterSpacing: "-0.015em" }}>
           Message landed. I read everything myself.
@@ -84,8 +84,7 @@ export default function ContactForm() {
 
       <button
         type="submit"
-        className="rounded-pill bg-gradient-to-br from-blue to-pink px-7 py-3 font-sans text-sm font-semibold transition-opacity hover:opacity-90"
-        style={{ color: "#0a0f1c" }}
+        className="rounded-pill bg-flame px-7 py-3 font-sans text-sm font-semibold text-white transition-colors hover:bg-flame-deep"
       >
         Send it
       </button>

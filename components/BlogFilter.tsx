@@ -36,8 +36,8 @@ export default function BlogFilter({ posts }: { posts: PostMeta[] }) {
               aria-pressed={isActive}
               className={`rounded-pill border px-4 py-2 font-mono text-[11px] font-medium uppercase tracking-label transition-all duration-150 ${
                 isActive
-                  ? "border-blue bg-blue/10 text-blue"
-                  : "border-rule bg-surface text-ink-muted hover:border-blue/40 hover:text-ink"
+                  ? "border-flame bg-flame/10 text-flame"
+                  : "border-rule bg-surface text-ink-muted hover:border-flame/40 hover:text-ink"
               }`}
             >
               {f}
@@ -56,7 +56,7 @@ export default function BlogFilter({ posts }: { posts: PostMeta[] }) {
       {visible.length > 0 ? (
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((post) => (
-            <BlogCard key={post.slug} post={post} />
+            <BlogCard key={post.slug} post={post} feature={post.featured} />
           ))}
         </div>
       ) : (
