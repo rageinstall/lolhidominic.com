@@ -4,127 +4,70 @@ import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About",
-  description:
-    "I&rsquo;m Dominic. I smoke weed, travel, cook, watch movies, play games, and share what I&rsquo;m into. This is the real-life site behind LolHiDominic.",
+  description: "The story behind Dominic Pérignon — creator, storyteller, and brand builder based in Los Angeles.",
   openGraph: {
     title: `About | ${site.shortName}`,
-    description:
-      "I&rsquo;m Dominic. I smoke weed, travel, cook, watch movies, play games, and share what I&rsquo;m into.",
+    description: "The story behind Dominic Pérignon — creator, storyteller, and brand builder.",
     url: `${site.url}/about`,
     type: "profile",
   },
   alternates: { canonical: "/about" },
 };
 
+const feelings = ["Included.", "Powerful.", "Less alone."];
+
 export default function AboutPage() {
   return (
-    <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-24">
-      <div className="grid gap-16 lg:grid-cols-12">
-        {/* Main copy */}
-        <div className="lg:col-span-7">
-          <p className="eyebrow mb-5">Who I am</p>
-          <h1 className="font-display text-display-lg font-black text-ink dark:text-paper text-balance">
-            I&rsquo;m Dominic. I explain things that need explaining.
-          </h1>
+    <div className="bg-bg text-ink">
+      <section className="mx-auto max-w-[1320px] px-6 pb-20 pt-16 md:px-8 md:pb-28 md:pt-24">
+        <p className="eyebrow mb-5">About Dominic</p>
+        <h1 className="max-w-6xl font-display text-[clamp(3.5rem,9vw,8rem)] font-black leading-[0.88] tracking-[-0.055em] text-white">
+          I didn’t start creating because I had something to sell.<br />
+          <span className="text-blue">I started because I wanted to see myself.</span>
+        </h1>
+      </section>
 
-          <div className="mt-10 space-y-7 text-lg leading-relaxed text-ink/80 dark:text-paper/80">
-            <p>
-              LolHiDominic is the place I share what I actually care about. I smoke weed, cook
-              things, travel when I can, watch movies, play games, and post about the weird, honest
-              life that comes with all of it. I make content from how I live, not from a checklist.
-            </p>
-            <p>
-              I&rsquo;m Dominic. I like being visible online and building in public. This site is
-              where I put down the stuff that feels real — notes from trips, recipes I&rsquo;m
-              trying, movie reactions, gaming takes, stream ideas, and the thoughts that come with it
-              all.
-            </p>
-            <p>
-              I&rsquo;m a trans guy. That&rsquo;s part of my story, but it doesn&rsquo;t define every
-              piece of content here. The things I share are built from my life, my tastes, and my
-              point of view — honest, sometimes messy, and always personal.
-            </p>
+      <div className="mx-auto max-w-[1320px] px-6 md:px-8"><div className="rule" /></div>
 
-            <blockquote className="border-l-2 border-flame pl-6 font-serif text-2xl italic leading-snug text-ink dark:text-paper">
-              This is not a brand play. It&rsquo;s just Dominic being Dominic.
-            </blockquote>
+      <section className="mx-auto grid max-w-[1320px] gap-12 px-6 py-20 md:px-8 md:py-28 lg:grid-cols-[0.65fr_1.35fr]">
+        <div>
+          <p className="eyebrow mb-4">The beginning</p>
+          <p className="font-serif text-3xl italic leading-relaxed text-white/85">I wanted to meet people like me, have more positive conversations, and build a life that felt genuinely happy.</p>
+        </div>
+        <div className="max-w-3xl space-y-6 text-lg leading-relaxed text-ink-muted">
+          <p>I started creating because I couldn’t see myself anywhere in the world. I wanted to make the kind of work I needed to see — work that made room for people who often felt like they were watching from the outside.</p>
+          <p>At first, that looked like fashion-forward videos, favorite music, and editing styles I couldn’t stop experimenting with. I liked making things. More importantly, I liked what happened when somebody watched them and felt understood.</p>
+          <p>In November 2024, I moved to Los Angeles and decided to take creativity seriously. The city gave me room to grow, and the support that followed showed me that there was something worth building here.</p>
+          <p>I keep creating because I love telling stories, making videos, and making people feel something. Transmasculine people are still rarely at the forefront of media productions. I want to help close that gap by showing up, making things, and inviting other people into the conversation.</p>
+        </div>
+      </section>
 
-            <p>
-              I run T-Time Media LLC as the umbrella for the work, but this space is really about
-              LolHiDominic. If you&rsquo;re here for travel notes, cooking experiments, weed life,
-              movie chats, gaming, or future streams, you&rsquo;re in the right place.
-            </p>
-
-            <p>
-              If something here makes you nod, laugh, or want to reach out, that means it landed.
-            </p>
-          </div>
-
-          <div className="mt-12 flex flex-wrap gap-3">
-            <Link
-              href="/work-with-me"
-              className="bg-flame px-7 py-3.5 font-display text-sm font-bold uppercase tracking-label text-paper transition-colors hover:bg-flame-deep"
-            >
-              Work with me
-            </Link>
-            <Link
-              href="/contact"
-              className="border border-ink/25 px-7 py-3.5 font-display text-sm font-bold uppercase tracking-label text-ink hover:border-ink dark:border-paper/25 dark:text-paper dark:hover:border-paper"
-            >
-              Get in touch
-            </Link>
+      <section className="border-y border-white/10 bg-surface">
+        <div className="mx-auto max-w-[1320px] px-6 py-20 md:px-8 md:py-28">
+          <p className="eyebrow mb-5">Why I keep creating</p>
+          <div className="grid gap-10 md:grid-cols-3">
+            <div><p className="font-display text-3xl font-black text-white">Tell stories.</p><p className="mt-3 leading-relaxed text-ink-muted">I want to turn lived experience into something people can see, understand, and carry with them.</p></div>
+            <div><p className="font-display text-3xl font-black text-white">Make space.</p><p className="mt-3 leading-relaxed text-ink-muted">Visibility matters when you rarely see people like yourself at the center of the frame.</p></div>
+            <div><p className="font-display text-3xl font-black text-white">Feel something.</p><p className="mt-3 leading-relaxed text-ink-muted">A good piece of content can make you laugh, think, feel represented, or finally feel less alone.</p></div>
           </div>
         </div>
+      </section>
 
-        {/* Sidebar: focus areas + platforms */}
-        <aside className="space-y-10 lg:col-span-4 lg:col-start-9">
-          <div>
-            <h2 className="eyebrow mb-5">What I cover</h2>
-            <ul className="space-y-3">
-              {[
-                ["Media Literacy", "How stories get framed, what matters, and what a smart reader should notice."],
-                ["Trans Life", "A first-person perspective that brings context without over-explaining."],
-                ["Internet Culture", "What the feed and the platform make visible, and what they hide."],
-                ["Travel & Safety", "Practical guidance on trips that matter to real people, not generic ratings."],
-                ["Representation", "Who shows up in stories, who gets left out, and why that matters."],
-              ].map(([topic, desc]) => (
-                <li key={topic} className="border-t border-ink/10 pt-3 dark:border-paper/10">
-                  <p className="font-display text-sm font-bold text-ink dark:text-paper">{topic}</p>
-                  <p
-                    className="mt-1 text-sm text-ink/60 dark:text-paper/60"
-                    dangerouslySetInnerHTML={{ __html: desc }}
-                  />
-                </li>
-              ))}
-            </ul>
+      <section className="mx-auto max-w-[1320px] px-6 py-20 md:px-8 md:py-28">
+        <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+          <div><p className="eyebrow mb-4">What I want people to feel</p><h2 className="font-display text-5xl font-black leading-none tracking-tight text-white md:text-7xl">When they leave my work, I want them to feel...</h2></div>
+          <div className="grid gap-px bg-white/10 sm:grid-cols-3">
+            {feelings.map((feeling) => <div key={feeling} className="bg-surface p-8"><p className="font-display text-3xl font-black text-blue">{feeling}</p></div>)}
           </div>
+        </div>
+      </section>
 
-          <div>
-            <h2 className="eyebrow mb-5">Platforms</h2>
-            <ul className="space-y-2">
-              {[
-                { name: "Link With Pride", handle: "linkwithpride.com", href: "https://linkwithpride.com" },
-                { name: "Instagram", handle: "@lolhidominic", href: "https://instagram.com/lolhidominic" },
-                { name: "TikTok", handle: "@lolhidominic", href: "https://tiktok.com/@lolhidominic" },
-                { name: "YouTube", handle: "@lolhidominic", href: "https://youtube.com/@lolhidominic" },
-                { name: "Facebook", handle: "@domfactcheck", href: "https://facebook.com/domfactcheck" },
-              ].map((p) => (
-                <li key={p.name}>
-                  <a
-                    href={p.href}
-                    className="group flex items-center justify-between border-t border-ink/10 py-2 dark:border-paper/10"
-                  >
-                    <span className="font-display text-sm font-semibold text-ink group-hover:text-flame dark:text-paper">
-                      {p.name}
-                    </span>
-                    <span className="text-xs text-ink/50 dark:text-paper/50">{p.handle}</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </aside>
-      </div>
+      <section className="bg-blue px-6 py-16 text-bg md:px-8 md:py-24">
+        <div className="mx-auto flex max-w-[1320px] flex-col justify-between gap-8 md:flex-row md:items-end">
+          <div><p className="mb-3 font-mono text-[11px] font-bold uppercase tracking-[0.24em]">Today</p><h2 className="max-w-3xl font-display text-4xl font-black leading-none md:text-6xl">Creator. Storyteller. Brand builder.</h2></div>
+          <Link href="/work-with-me" className="rounded-full bg-bg px-6 py-3 text-sm font-bold text-white transition hover:bg-white hover:text-bg">See the work →</Link>
+        </div>
+      </section>
     </div>
   );
 }
