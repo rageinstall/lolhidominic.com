@@ -22,6 +22,7 @@ const stats = [
 ];
 
 const work = [
+  { title: "DC Pride → WorldPride DC", type: "Case study · 2024 → 2025", body: "A two-year Pride storytelling case study showing how a personal point of view evolved as the scale grew.", href: "/work/dc-pride-worldpride" },
   { title: "T-Time Media LLC", type: "Studio", body: "The creative studio behind Dominic’s work — video, brand building, sponsored campaigns, and experiences.", href: "/work-with-me#t-time-media" },
   { title: "Link With Pride", type: "Platform", body: "A travel platform built to help LGBTQ+ travelers make better-informed decisions about where they go.", href: "/link-with-pride" },
   { title: "@domfactcheck", type: "Media", body: "A fact-checking and context-driven extension of Dominic’s storytelling work.", href: "https://instagram.com/domfactcheck" },
