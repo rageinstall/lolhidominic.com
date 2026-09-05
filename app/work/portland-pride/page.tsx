@@ -1,0 +1,112 @@
+import type { Metadata } from "next";
+import Link from "next/link";
+import { site } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Portland Pride 2024",
+  description: "A creator-led Portland Pride 2024 case study focused on LGBTQ+ community, local businesses, and trans visibility.",
+  openGraph: {
+    title: `Portland Pride 2024 | ${site.shortName}`,
+    description: "Creator-led Pride storytelling in Portland, Oregon.",
+    url: `${site.url}/work/portland-pride`,
+    type: "website",
+  },
+  alternates: { canonical: "/work/portland-pride" },
+};
+
+const highlights = [
+  ["1M+", "views", "Portland Pride feature post"],
+  ["21.3K", "views", "LGBTQ+ immersive museum reel"],
+  ["20.8K", "views", "Keep Portland Weird carousel"],
+  ["11K", "likes", "Mis Tacones feature reel"],
+];
+
+const content = [
+  ["July 17", "Arrival", "“Flying to Portland Oregon for Pride! :D”", "801 likes · 28 comments · 16 saves", "Views were not available in the supplied insights screen."],
+  ["July 19", "Community spotlight", "Mis Tacones Vegan Mexican restaurant", "11K likes · 1.3K comments · 1.6K saves", "The story centered the restaurant's LGBTQ+ community support and its practice of providing free food to trans POC."],
+  ["July 19", "Experience", "The most LGBTQ+ inclusive immersive museum in Portland", "21.3K views · 642 likes · 48 comments · 14 sends", "A discovery-led reel turned a local experience into a recommendation for the audience."],
+  ["July 20", "City story", "Keep Portland Weird", "20.8K views · 795 likes · 9 comments · 16 saves", "A visual carousel connected Pride travel with Portland's personality, food, friendship, and local culture."],
+];
+
+export default function PortlandPridePage() {
+  return (
+    <div className="bg-bg text-ink">
+      <section className="mx-auto max-w-[1320px] px-6 pb-16 pt-16 md:px-8 md:pb-24 md:pt-24">
+        <Link href="/work-with-me" className="eyebrow inline-block text-ink-muted transition hover:text-blue">← Back to work</Link>
+        <p className="eyebrow mb-5 mt-12 text-blue">Campaign case study · July 2024</p>
+        <h1 className="max-w-6xl font-display text-[clamp(4rem,10vw,9rem)] font-black leading-[0.84] tracking-[-0.06em] text-white">Portland<br /><span className="text-blue">Pride.</span></h1>
+        <p className="mt-8 max-w-3xl font-display text-2xl font-semibold leading-tight text-white md:text-4xl">A city story told through queer community, local culture, and lived experience.</p>
+        <p className="mt-5 max-w-2xl text-lg leading-relaxed text-ink-muted">A creator-led Pride trip that became a collection of stories about where LGBTQ+ people can eat, explore, celebrate, and feel seen.</p>
+      </section>
+
+      <div className="mx-auto max-w-[1320px] px-6 md:px-8"><div className="rule" /></div>
+
+      <section className="mx-auto max-w-[1320px] px-6 py-20 md:px-8 md:py-28">
+        <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
+          <div><p className="eyebrow mb-4">The idea</p><h2 className="font-display text-4xl font-black tracking-tight text-white md:text-6xl">Don’t just cover Pride. Show people where they can find it.</h2></div>
+          <div className="max-w-3xl space-y-6 text-lg leading-relaxed text-ink-muted">
+            <p>The supplied campaign material documents Dominic traveling to Portland for Pride and building content around the people and places that made the trip meaningful.</p>
+            <p>Instead of treating Pride as a single event, the content moved through the city: arriving for Pride, discovering an immersive LGBTQ+ experience, highlighting a queer-friendly local restaurant, and capturing the people, food, and personality of Portland.</p>
+            <p>The result was a travel-and-community story that could work as entertainment, recommendation, and representation at the same time.</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-y border-white/10 bg-surface">
+        <div className="mx-auto max-w-[1320px] px-6 py-20 md:px-8 md:py-28">
+          <p className="eyebrow mb-8 text-blue">The numbers</p>
+          <div className="grid gap-px bg-white/10 md:grid-cols-2 lg:grid-cols-4">
+            {highlights.map(([value, label, detail]) => <Metric key={detail} value={value} label={label} detail={detail} />)}
+          </div>
+          <p className="mt-6 max-w-3xl text-sm leading-relaxed text-ink-faint">These figures are taken from the supplied Instagram screenshots. They represent individual documented posts/reels, not a claim of total campaign reach.</p>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-[1320px] px-6 py-20 md:px-8 md:py-28">
+        <div className="mb-12 grid gap-8 md:grid-cols-[0.7fr_1.3fr] md:items-end"><div><p className="eyebrow mb-4 text-blue">The work</p><h2 className="font-display text-5xl font-black text-white md:text-7xl">A Pride trip became a content system.</h2></div><p className="max-w-xl text-lg leading-relaxed text-ink-muted">The strongest part of the trip was the variety. Each piece had a different entry point, but all of them answered the same audience question: what does Pride actually feel like here?</p></div>
+        <div className="grid gap-4 md:grid-cols-2">
+          {content.map(([date, type, title, metrics, note]) => <article key={title} className="border border-white/10 bg-surface p-7 md:p-9"><div className="flex items-center justify-between gap-4"><span className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-blue">{date} · {type}</span><span className="text-white/20">↗</span></div><h3 className="mt-8 font-display text-2xl font-black text-white md:text-3xl">{title}</h3><p className="mt-4 font-semibold text-white/80">{metrics}</p><p className="mt-3 leading-relaxed text-ink-muted">{note}</p></article>)}
+        </div>
+      </section>
+
+      <section className="border-y border-white/10 bg-surface">
+        <div className="mx-auto max-w-[1320px] px-6 py-20 md:px-8 md:py-28">
+          <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
+            <div><p className="eyebrow mb-4">The standout</p><h2 className="font-display text-5xl font-black text-white md:text-7xl">1M+ views.</h2></div>
+            <div className="space-y-6 text-lg leading-relaxed text-ink-muted">
+              <p>The supplied Instagram screenshot shows a Portland Pride post featuring Mis Tacones at more than 1 million views, with 10.7K likes, 1,333 comments, and 190 sends.</p>
+              <p>The content was built around a local story with a clear community point of view: the owner discussing the cost and emotional weight trans people carry, alongside the restaurant's support for the LGBTQ+ community and trans people of color.</p>
+              <p>That combination — a useful place to know, a real person, and a story with stakes — gave the post a reason to travel beyond the people who were already looking for Pride content.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-[1320px] px-6 py-20 md:px-8 md:py-28">
+        <p className="eyebrow mb-5 text-blue">Why it worked</p>
+        <h2 className="max-w-5xl font-display text-5xl font-black leading-none text-white md:text-7xl">Representation was the lens — not the decoration.</h2>
+        <div className="mt-12 grid gap-6 md:grid-cols-3">
+          <StoryCard title="Useful" body="The content gave viewers places and experiences they could actually put on a Portland itinerary." />
+          <StoryCard title="Human" body="People and personal reactions stayed at the center instead of turning the city into a generic Pride backdrop." />
+          <StoryCard title="Specific" body="The work highlighted queer community, trans visibility, local businesses, food, and culture through a distinctly personal lens." />
+        </div>
+      </section>
+
+      <section className="bg-blue px-6 py-20 text-bg md:px-8 md:py-28">
+        <div className="mx-auto max-w-[1320px]">
+          <p className="mb-4 font-mono text-[11px] font-bold uppercase tracking-[0.24em]">More work</p>
+          <h2 className="max-w-4xl font-display text-5xl font-black leading-none md:text-7xl">Let’s make something people actually want to watch.</h2>
+          <Link href="/contact" className="mt-8 inline-flex rounded-full bg-bg px-7 py-4 text-sm font-bold text-white transition hover:bg-white hover:text-bg">Work with Dominic →</Link>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function Metric({ value, label, detail }: { value: string; label: string; detail: string }) {
+  return <div className="bg-bg p-7 md:p-8"><p className="font-display text-4xl font-black text-white md:text-5xl">{value}</p><p className="mt-2 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-blue">{label}</p><p className="mt-4 text-sm leading-relaxed text-ink-muted">{detail}</p></div>;
+}
+
+function StoryCard({ title, body }: { title: string; body: string }) {
+  return <div className="border border-white/10 bg-bg p-7 md:p-8"><h3 className="font-display text-2xl font-black text-white">{title}</h3><p className="mt-4 leading-relaxed text-ink-muted">{body}</p></div>;
+}
