@@ -22,6 +22,7 @@ const stats = [
 ];
 
 const work = [
+  { title: "Portland Pride 2024", type: "Campaign case study", body: "A creator-led Pride trip turned into a city story about queer community, local culture, and lived experience — including a documented 1M+ view feature.", href: "/work/portland-pride" },
   { title: "DC Pride → WorldPride DC", type: "Case study · 2024 → 2025", body: "A two-year Pride storytelling case study showing how a personal point of view evolved as the scale grew.", href: "/work/dc-pride-worldpride" },
   { title: "T-Time Media LLC", type: "Studio", body: "The creative studio behind Dominic’s work — video, brand building, sponsored campaigns, and experiences.", href: "/work-with-me#t-time-media" },
   { title: "Link With Pride", type: "Platform", body: "A travel platform built to help LGBTQ+ travelers make better-informed decisions about where they go.", href: "/link-with-pride" },
