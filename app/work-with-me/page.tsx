@@ -3,187 +3,69 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 
 export const metadata: Metadata = {
-  title: "Work With Me",
-  description:
-    "Partner with Dominic and LolHiDominic for honest sponsored content, travel storytelling, and platform campaigns that respect the audience.",
+  title: "Work",
+  description: "Creative work, brand partnerships, and projects by Dominic Pérignon through T-Time Media LLC.",
   openGraph: {
-    title: `Work With Me | ${site.shortName}`,
-    description:
-      "Partner with Dominic and LolHiDominic for honest sponsored content, travel storytelling, and platform campaigns.",
+    title: `Work | ${site.shortName}`,
+    description: "Creative work, brand partnerships, and projects by Dominic Pérignon.",
     url: `${site.url}/work-with-me`,
     type: "website",
   },
   alternates: { canonical: "/work-with-me" },
 };
 
-const platforms = [
-  {
-    name: "Facebook",
-    handle: "@lolhidominic / @domfactcheck",
-    note: "Long-form video, commentary, and link-driving content. Where the older, more engaged side of the audience is.",
-  },
-  {
-    name: "Instagram",
-    handle: "@lolhidominic",
-    note: "Reels, carousels, and story content. High engagement, visually-led, content-native formats.",
-  },
-  {
-    name: "TikTok",
-    handle: "@lolhidominic",
-    note: "Short-form video built for discovery. Best for brand awareness and top-of-funnel reach.",
-  },
-  {
-    name: "YouTube",
-    handle: "@lolhidominic",
-    note: "Long-form explainers and video essays. Integrations here land with the most media-literate, high-intent viewers.",
-  },
-  {
-    name: "lolhidominic.com",
-    handle: "Blog + written content",
-    note: "Editorial sponsorships, affiliate links, and in-article placements for brands that fit the reader.",
-  },
-  {
-    name: "Link With Pride",
-    handle: "linkwithpride.com",
-    note: "Dedicated LGBTQ+ travel platform. Best-fit for travel brands, booking platforms, insurance, and safety tools.",
-  },
+const formats = [
+  ["Sponsored Content", "Platform-native video that feels like something people actually want to watch."],
+  ["UGC & Creative", "Concepts, scripts, shoots, and edits built for brands that need a human voice."],
+  ["Campaigns", "Multi-platform creative systems that turn one idea into a complete campaign."],
+  ["Experiences", "Events, activations, and collaborations designed around story and participation."],
 ];
 
 export default function WorkWithMePage() {
   return (
-    <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-24">
-      <header className="max-w-3xl">
-        <p className="eyebrow mb-4">T-Time Media LLC</p>
-        <h1 className="font-display text-display-lg font-black text-ink dark:text-paper text-balance">
-          Partner with Dominic and LolHiDominic.
-        </h1>
-        <p className="mt-6 max-w-prose text-lg leading-relaxed text-ink/70 dark:text-paper/70">
-          I work with brands that meaningfully fit my audience. Sponsored content, travel storytelling,
-          and platform campaigns are all done with the same straight-shooting voice, clear
-          disclosure, and audience-first standards.
-        </p>
-      </header>
+    <div className="bg-bg text-ink">
+      <section className="mx-auto max-w-[1320px] px-6 pb-20 pt-16 md:px-8 md:pb-28 md:pt-24">
+        <p className="eyebrow mb-5">Work · T-Time Media LLC</p>
+        <h1 className="max-w-5xl font-display text-[clamp(4rem,10vw,8.5rem)] font-black leading-[0.86] tracking-[-0.06em] text-white">Things I’ve built.<br /><span className="text-blue">Things we can build.</span></h1>
+        <p className="mt-8 max-w-2xl text-xl leading-relaxed text-ink-muted md:text-2xl">T-Time Media is the studio behind Dominic’s creator work — connecting storytelling, video, brands, platforms, and experiences.</p>
+      </section>
 
-      <div className="rule mt-14" />
+      <div className="mx-auto max-w-[1320px] px-6 md:px-8"><div className="rule" /></div>
 
-      {/* Audience */}
-      <section className="mt-14 grid gap-12 lg:grid-cols-2" aria-labelledby="audience-heading">
-        <div>
-          <h2 id="audience-heading" className="eyebrow mb-5">The audience</h2>
-          <div className="space-y-5 text-ink/80 dark:text-paper/80">
-            <p className="text-lg leading-relaxed">
-              My audience is primarily LGBTQ+ adults, with significant overlap in trans and
-              non-binary communities. They&rsquo;re media-literate, skeptical of corporate
-              performance, and pay attention to who a brand actually supports versus who it claims
-              to support.
-            </p>
-            <p className="leading-relaxed">
-              They trust recommendations because I&rsquo;ve built that trust over time with
-              consistent, honest content. That&rsquo;s the thing you&rsquo;re partnering with, not
-              just a follower count.
-            </p>
-            <p className="leading-relaxed">
-              They span the U.S. primarily, with meaningful reach in Canada and Western Europe,
-              skewing 25-44. High engagement across all platforms. Decision-makers in their
-              households. Spend money intentionally.
-            </p>
+      <section id="t-time-media" className="mx-auto max-w-[1320px] px-6 py-20 md:px-8 md:py-28">
+        <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
+          <div><p className="eyebrow mb-4">The studio</p><h2 className="font-display text-4xl font-black tracking-tight text-white md:text-6xl">T-Time Media LLC</h2></div>
+          <div className="max-w-3xl space-y-6 text-lg leading-relaxed text-ink-muted"><p>T-Time Media is the creative studio around Dominic’s work. It gives the creator, the brands, and the independent projects one place to build from.</p><p>The work can start with a video, a campaign, a platform, an experience, or an idea that doesn’t have a category yet. The goal is the same: make something people actually care about.</p></div>
+        </div>
+      </section>
+
+      <section className="border-y border-white/10 bg-surface">
+        <div className="mx-auto max-w-[1320px] px-6 py-20 md:px-8 md:py-28">
+          <p className="eyebrow mb-8">What I make</p>
+          <div className="grid gap-px bg-white/10 md:grid-cols-2">
+            {formats.map(([title, body], i) => <div key={title} className="bg-surface p-8 md:p-10"><span className="font-mono text-xs text-blue">0{i + 1}</span><h3 className="mt-10 font-display text-3xl font-black text-white">{title}</h3><p className="mt-4 max-w-lg leading-relaxed text-ink-muted">{body}</p></div>)}
           </div>
         </div>
+      </section>
 
-        <div className="grid gap-px bg-ink/10 dark:bg-paper/10 self-start">
-          {[
-            ["Primary audience", "LGBTQ+ adults, trans-inclusive focus"],
-            ["Geography", "U.S.-first, Canada, Western Europe"],
-            ["Age skew", "25-44"],
-            ["Platform mix", "Facebook, Instagram, TikTok, YouTube, Blog"],
-            ["Inquiry type", "Sponsorships, affiliates, editorial coverage"],
-          ].map(([label, value]) => (
-            <div key={label} className="flex justify-between bg-paper px-5 py-4 dark:bg-night">
-              <span className="font-display text-sm font-semibold text-ink/60 dark:text-paper/60">
-                {label}
-              </span>
-              <span className="text-right font-display text-sm font-bold text-ink dark:text-paper">
-                {value}
-              </span>
-            </div>
-          ))}
+      <section className="mx-auto max-w-[1320px] px-6 py-20 md:px-8 md:py-28">
+        <p className="eyebrow mb-5">Selected work</p>
+        <div className="grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-2">
+          <Project title="Link With Pride" type="Platform" body="An LGBTQ+ travel platform built from zero around better-informed, more confident travel decisions." href="/link-with-pride" />
+          <Project title="@domfactcheck" type="Media" body="A context-driven media project extending Dominic’s storytelling into fact-checking and information literacy." href="https://instagram.com/domfactcheck" external />
+          <Project title="LolHiDominic" type="Creator" body="The personal creator brand: video, culture, travel, trans life, humor, and the stories that matter." href="https://instagram.com/lolhidominic" external />
+          <Project title="Brand partnerships" type="Campaigns" body="Sponsored content and creative collaborations designed to feel native to the audience rather than bolted onto it." href="/contact" />
         </div>
       </section>
 
-      <div className="rule mt-14" />
-
-      {/* Platforms */}
-      <section className="mt-14" aria-labelledby="platforms-heading">
-        <h2 id="platforms-heading" className="eyebrow mb-8">Where the work lives</h2>
-        <div className="grid gap-px bg-ink/10 dark:bg-paper/10 sm:grid-cols-2 lg:grid-cols-3">
-          {platforms.map((p) => (
-            <div key={p.name} className="flex flex-col bg-paper p-6 dark:bg-night">
-              <span className="font-display text-lg font-extrabold text-ink dark:text-paper">{p.name}</span>
-              <span className="mt-1 font-display text-xs font-semibold uppercase tracking-label text-flame">{p.handle}</span>
-              <p className="mt-3 text-sm leading-relaxed text-ink/65 dark:text-paper/65">{p.note}</p>
-            </div>
-          ))}
-        </div>
+      <section className="bg-blue px-6 py-20 text-bg md:px-8 md:py-28">
+        <div className="mx-auto max-w-[1320px]"><p className="mb-4 font-mono text-[11px] font-bold uppercase tracking-[0.24em]">Let’s work</p><h2 className="max-w-4xl font-display text-5xl font-black leading-none md:text-7xl">I like making things that didn’t exist before.</h2><Link href="/contact" className="mt-8 inline-flex rounded-full bg-bg px-7 py-4 text-sm font-bold text-white transition hover:bg-white hover:text-bg">Start a conversation →</Link></div>
       </section>
-
-      <div className="rule mt-14" />
-
-      {/* What I do and don't do */}
-      <section className="mt-14 grid gap-12 lg:grid-cols-2" aria-labelledby="terms-heading">
-        <div>
-          <h2 id="terms-heading" className="eyebrow mb-5">What I do</h2>
-          <ul className="space-y-3 text-ink/80 dark:text-paper/80">
-            {[
-              "Sponsored content that reads like content, not a press release",
-              "Affiliate integrations, clearly disclosed",
-              "Dedicated coverage on one or more platforms",
-              "Travel and destination features via Link With Pride",
-              "Multi-platform campaign packages",
-              "Custom deliverables, negotiated case by case",
-            ].map((item) => (
-              <li key={item} className="flex gap-3">
-                <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-flame" aria-hidden="true" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div>
-          <h2 className="eyebrow mb-5">What I don&rsquo;t do</h2>
-          <ul className="space-y-3 text-ink/80 dark:text-paper/80">
-            {[
-              "Coverage of brands whose practices contradict LGBTQ+ interests",
-              "Pre-packaged scripts I didn't write",
-              "Undisclosed sponsorships of any kind",
-              "Pride-month-only partnerships that disappear in July",
-              "Products I wouldn't actually use or recommend",
-            ].map((item) => (
-              <li key={item} className="flex gap-3">
-                <span className="mt-1 h-1.5 w-1.5 shrink-0 rounded-full bg-taupe" aria-hidden="true" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <div className="mt-16 border border-ink/15 p-8 dark:border-paper/15 md:p-12">
-        <p className="eyebrow mb-3">Ready to talk</p>
-        <h2 className="font-display text-3xl font-extrabold tracking-tight text-ink dark:text-paper md:text-4xl">
-          Pitch me. I read the emails myself.
-        </h2>
-        <p className="mt-4 max-w-prose text-ink/70 dark:text-paper/70">
-          Tell me who you are, what you&rsquo;re trying to do, and why you think it fits my
-          audience. That&rsquo;s all I need to know if there&rsquo;s something worth building.
-        </p>
-        <Link
-          href="/contact"
-          className="mt-7 inline-block bg-flame px-8 py-4 font-display text-sm font-bold uppercase tracking-label text-paper transition-colors hover:bg-flame-deep"
-        >
-          Send an inquiry
-        </Link>
-      </div>
     </div>
   );
+}
+
+function Project({ title, type, body, href, external = false }: { title: string; type: string; body: string; href: string; external?: boolean }) {
+  const content = <><span className="font-mono text-[10px] uppercase tracking-[0.24em] text-blue">{type}</span><h3 className="mt-8 font-display text-3xl font-black text-white">{title}</h3><p className="mt-4 leading-relaxed text-ink-muted">{body}</p><span className="mt-8 inline-block text-sm font-semibold text-blue">View project →</span></>;
+  return external ? <a href={href} className="group bg-bg p-8 transition hover:bg-surface md:p-10">{content}</a> : <Link href={href} className="group bg-bg p-8 transition hover:bg-surface md:p-10">{content}</Link>;
 }
