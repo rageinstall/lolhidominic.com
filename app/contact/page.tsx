@@ -4,11 +4,10 @@ import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
   title: "Contact",
-  description:
-    "Press, brand inquiries, and general questions. Dominic reads every email himself.",
+  description: "Get in touch with Dominic Pérignon for brand partnerships, creative projects, collaborations, or a simple hello.",
   openGraph: {
     title: `Contact | ${site.shortName}`,
-    description: "Press, brand inquiries, and general questions.",
+    description: "Brand partnerships, creative projects, collaborations, or just saying hi.",
     url: `${site.url}/contact`,
     type: "website",
   },
@@ -17,56 +16,27 @@ export const metadata: Metadata = {
 
 export default function ContactPage() {
   return (
-    <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-24">
-      <div className="grid gap-16 lg:grid-cols-12">
-        <div className="lg:col-span-5">
-          <p className="eyebrow mb-4">Get in touch</p>
-          <h1 className="font-display text-display-md font-black text-ink dark:text-paper">
-            Let&rsquo;s actually talk.
-          </h1>
-          <p className="mt-6 text-lg leading-relaxed text-ink/70 dark:text-paper/70">
-            I read every message myself. If it needs a reply, you&rsquo;ll hear back in a few days,
-            not from an autoresponder.
-          </p>
+    <div className="bg-bg text-ink">
+      <section className="mx-auto max-w-[1320px] px-6 pb-20 pt-16 md:px-8 md:pb-28 md:pt-24">
+        <p className="eyebrow mb-5">Contact · T-Time Media LLC</p>
+        <h1 className="max-w-5xl font-display text-[clamp(4rem,10vw,8rem)] font-black leading-[0.86] tracking-[-0.06em] text-white">Have something<br /><span className="text-blue">in mind?</span></h1>
+        <p className="mt-8 max-w-2xl text-xl leading-relaxed text-ink-muted md:text-2xl">Brand partnerships, creative projects, collaborations, press, or just saying hi. Start here.</p>
+      </section>
 
-          <div className="mt-10 space-y-5 border-t border-ink/10 pt-8 dark:border-paper/10">
-            <div>
-              <p className="font-display text-sm font-bold text-ink dark:text-paper">Press &amp; interview requests</p>
-              <p className="mt-1 text-sm text-ink/60 dark:text-paper/60">
-                For journalists, producers, and podcasters. Include your outlet, timeline, and
-                what you&rsquo;re working on.
-              </p>
-            </div>
-            <div>
-              <p className="font-display text-sm font-bold text-ink dark:text-paper">Brand inquiries</p>
-              <p className="mt-1 text-sm text-ink/60 dark:text-paper/60">
-                Sponsorships, affiliates, and content partnerships. Read the{" "}
-                <a href="/work-with-me" className="text-flame hover:underline">
-                  Work With Me
-                </a>{" "}
-                page first, then come back here.
-              </p>
-            </div>
-            <div>
-              <p className="font-display text-sm font-bold text-ink dark:text-paper">Everything else</p>
-              <p className="mt-1 text-sm text-ink/60 dark:text-paper/60">
-                A question about something I wrote, feedback, or something that doesn&rsquo;t fit
-                the other categories. Send it.
-              </p>
-            </div>
-            <p className="pt-2 text-sm text-ink/50 dark:text-paper/50">
-              Direct email:{" "}
-              <a href={`mailto:${site.email}`} className="text-flame hover:underline">
-                {site.email}
-              </a>
-            </p>
+      <div className="mx-auto max-w-[1320px] px-6 md:px-8"><div className="rule" /></div>
+
+      <section className="mx-auto grid max-w-[1320px] gap-12 px-6 py-20 md:px-8 md:py-28 lg:grid-cols-[0.7fr_1.3fr]">
+        <div>
+          <p className="eyebrow mb-6">Start a conversation</p>
+          <div className="space-y-6 text-ink-muted">
+            <div><h2 className="font-display text-xl font-bold text-white">Brand partnerships</h2><p className="mt-2 leading-relaxed">Tell me about the brand, the campaign, what you want to make, and why you think it fits.</p></div>
+            <div><h2 className="font-display text-xl font-bold text-white">Creative projects</h2><p className="mt-2 leading-relaxed">Have an idea that needs a storyteller, creator, producer, or collaborator? I want to hear it.</p></div>
+            <div><h2 className="font-display text-xl font-bold text-white">Just say hi</h2><p className="mt-2 leading-relaxed">Not every conversation needs a brief. Send the message.</p></div>
           </div>
+          <div className="mt-10 border-t border-white/10 pt-6"><p className="text-xs uppercase tracking-[0.14em] text-ink-faint">Direct email</p><a href={`mailto:${site.email}`} className="mt-2 inline-block text-lg font-semibold text-blue hover:underline">{site.email}</a></div>
         </div>
-
-        <div className="lg:col-span-6 lg:col-start-7">
-          <ContactForm />
-        </div>
-      </div>
+        <div className="rounded-2xl border border-white/10 bg-surface p-6 md:p-10"><ContactForm /></div>
+      </section>
     </div>
   );
 }
