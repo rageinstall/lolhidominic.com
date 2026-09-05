@@ -8,69 +8,42 @@ export default function Footer() {
     <footer className="border-t border-hairline bg-bg">
       <div className="mx-auto max-w-[1320px] px-8 py-14 md:py-20">
         <div className="grid gap-12 md:grid-cols-12">
-
-          {/* Wordmark + tagline */}
           <div className="md:col-span-5">
-            <Link
-              href="/"
-              className="font-display text-2xl font-bold text-ink"
-              style={{ letterSpacing: "-0.03em" }}
-            >
+            <Link href="/" className="font-display text-2xl font-bold text-ink" style={{ letterSpacing: "-0.03em" }}>
               <span className="text-white">lolhi</span><span className="text-blue">dominic</span>
             </Link>
             <p className="mt-4 max-w-[28ch] font-serif italic text-lg leading-snug text-ink-muted">
-              LolHiDominic: weed life, travel notes, cooking experiments, movie thoughts, and gaming plans.
+              Creator, storyteller, and brand builder making things that make people feel less alone.
             </p>
+            <p className="mt-5 font-mono text-xs uppercase tracking-label text-ink-faint">{site.org}</p>
           </div>
 
-          {/* Pages */}
           <nav aria-label="Footer" className="md:col-span-3">
             <h2 className="eyebrow mb-4 text-ink-faint">Pages</h2>
             <ul className="flex flex-col gap-2.5">
               {navLinks.map((link) => (
                 <li key={link.href}>
-                  {link.external ? (
-                    <a
-                      href={link.href}
-                      className="font-sans text-sm text-ink-muted transition-colors hover:text-blue"
-                    >
-                      {link.label}
-                    </a>
-                  ) : (
-                    <Link
-                      href={link.href as Parameters<typeof Link>[0]["href"]}
-                      className="font-sans text-sm text-ink-muted transition-colors hover:text-blue"
-                    >
-                      {link.label}
-                    </Link>
-                  )}
+                  <Link href={link.href as Parameters<typeof Link>[0]["href"]} className="font-sans text-sm text-ink-muted transition-colors hover:text-blue">
+                    {link.label}
+                  </Link>
                 </li>
               ))}
             </ul>
           </nav>
 
-          {/* Socials */}
           <div className="md:col-span-4">
             <h2 className="eyebrow mb-4 text-ink-faint">Find me</h2>
             <ul className="flex flex-col">
               {socials.map((s) => (
                 <li key={s.label} className="flex items-baseline justify-between border-b border-hairline py-2 last:border-0">
-                  <a
-                    href={s.href}
-                    className="font-sans text-sm text-ink-muted transition-colors hover:text-blue"
-                  >
+                  <a href={s.href} className="font-sans text-sm text-ink-muted transition-colors hover:text-blue">
                     {s.label}
                   </a>
-                  {"handle" in s && s.handle ? (
-                    <span className="font-mono text-[0.72rem] text-ink-faint">{s.handle}</span>
-                  ) : null}
+                  <span className="font-mono text-[0.72rem] text-ink-faint">{s.handle}</span>
                 </li>
               ))}
               <li className="pt-3">
-                <a
-                  href="https://linkwithpride.com"
-                  className="font-mono text-xs font-medium uppercase tracking-label text-blue hover:underline"
-                >
+                <a href="https://linkwithpride.com" className="font-mono text-xs font-medium uppercase tracking-label text-blue hover:underline">
                   linkwithpride.com
                 </a>
               </li>
@@ -78,18 +51,10 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Bottom bar */}
         <div className="mt-14 flex items-center justify-between border-t border-hairline pt-6">
-          <p className="font-mono text-[11px] tracking-[0.04em] text-ink-faint">
-            &copy; {year} {site.org}. All rights reserved.
-          </p>
-          {/* Trans flag stripe */}
+          <p className="font-mono text-[11px] tracking-[0.04em] text-ink-faint">&copy; {year} {site.org}. All rights reserved.</p>
           <div className="flex h-[10px] w-14 overflow-hidden rounded-[4px]" aria-hidden="true">
-            <span className="flex-1 bg-blue" />
-            <span className="flex-1 bg-pink" />
-            <span className="flex-1 bg-white" />
-            <span className="flex-1 bg-pink" />
-            <span className="flex-1 bg-blue" />
+            <span className="flex-1 bg-blue" /><span className="flex-1 bg-pink" /><span className="flex-1 bg-white" /><span className="flex-1 bg-pink" /><span className="flex-1 bg-blue" />
           </div>
         </div>
       </div>
