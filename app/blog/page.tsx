@@ -6,12 +6,10 @@ import MagazineFeed from "@/components/MagazineFeed";
 
 export const metadata: Metadata = {
   title: "Writing",
-  description:
-    "Writing from LolHiDominic: clear takes on stories, travel, media, and what the internet is actually saying. Pick a lane or read it all.",
+  description: "Essays, stories, and perspectives from Dominic Pérignon on culture, media, travel, representation, and life.",
   openGraph: {
     title: `Writing | ${site.shortName}`,
-    description:
-      "Writing from LolHiDominic: clear takes on stories, travel, media, and what the internet is actually saying.",
+    description: "Essays, stories, and perspectives from Dominic Pérignon.",
     url: `${site.url}/blog`,
     type: "website",
   },
@@ -25,12 +23,12 @@ export default function BlogIndexPage() {
   return (
     <div className="mx-auto max-w-7xl px-5 py-10 md:px-8 md:py-16">
       <header className="max-w-4xl">
-        <p className="eyebrow mb-4">The editorial</p>
+        <p className="eyebrow mb-4">Writing</p>
         <h1 className="font-display text-[clamp(2.8rem,5vw,4.5rem)] font-black tracking-[-0.025em] text-paper">
-          A cinematic magazine for travel, food, film, weed, and games.
+          Stories, ideas, and things I can&rsquo;t stop thinking about.
         </h1>
         <p className="mt-6 max-w-prose text-lg leading-relaxed text-ink-soft">
-          This isn&rsquo;t a list. It&rsquo;s a premium dashboard of stories, reviews, and mood-driven dispatches that feel like a late-night streaming lounge.
+          A collection of essays, travel notes, media commentary, and personal perspectives from Dominic.
         </p>
       </header>
 
