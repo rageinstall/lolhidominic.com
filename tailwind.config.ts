@@ -1,7 +1,6 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  darkMode: "media",
   content: [
     "./app/**/*.{ts,tsx,mdx}",
     "./components/**/*.{ts,tsx}",
@@ -12,60 +11,38 @@ const config: Config = {
     extend: {
       colors: {
         ink: {
-          DEFAULT: "#F2F6FF",
-          soft: "#B4C3DE",
-          mute: "#8FA1C2",
-          faint: "#6D7AA0",
+          DEFAULT: "#11110F",
+          soft: "#4F4D48",
+          mute: "#77736B",
+          faint: "#99948A",
         },
         paper: {
-          DEFAULT: "#F4F2ED",
-          soft: "#E9E5DB",
-          deep: "#D5CFC0",
+          DEFAULT: "#FFFDF8",
+          soft: "#E9E5DC",
+          deep: "#D8D3C8",
         },
-        matcha: {
-          DEFAULT: "#4CFF8D",
-          soft: "#9AFFBD",
-        },
-        cyber: {
-          DEFAULT: "#8C4DFF",
-          soft: "#C89CFF",
-        },
-        amber: {
-          DEFAULT: "#FFB25C",
-          soft: "#FFD59C",
-        },
-        flame: {
-          DEFAULT: "#FF4A1C",
-          deep: "#D63A12",
-        },
-        taupe: "#9B8B7A",
-        fog: "#C9C1B4",
-        night: {
-          DEFAULT: "#07090D",
-          soft: "#0F1015",
-          line: "#1A1F2A",
-        },
-        bg: "#05060a",
-        surface: "#0b0f17",
-        surface2: "#111827",
-        surface3: "#151c2b",
-        rule: "#15213c",
-        hairline: "#0e1220",
-        "ink-soft": "#b4c3de",
-        "ink-muted": "#8fa1c2",
-        "ink-faint": "#6d7aa0",
-        blue: "#5BCEFA",
-        pink: "#F5A9B8",
+        bg: "#F3F0E9",
+        surface: "#FFFDF8",
+        surface2: "#E9E5DC",
+        surface3: "#DED9CF",
+        rule: "#D8D3C8",
+        hairline: "#D8D3C8",
+        "ink-soft": "#4F4D48",
+        "ink-muted": "#77736B",
+        "ink-faint": "#99948A",
+        blue: "#1479FF",
+        pink: "#F2A7BD",
+        red: "#E94B35",
       },
       fontFamily: {
-        display: ["var(--font-serif)", "Georgia", "serif"],
-        sans: ["Satoshi", "system-ui", "sans-serif"],
-        serif: ["var(--font-serif)", "Georgia", "serif"],
+        display: ["var(--font-display)", "Georgia", "serif"],
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        serif: ["var(--font-display)", "Georgia", "serif"],
       },
       fontSize: {
-        "display-xl": ["clamp(3rem, 8vw, 7rem)", { lineHeight: "0.95", letterSpacing: "-0.03em" }],
-        "display-lg": ["clamp(2.5rem, 5.5vw, 5rem)", { lineHeight: "0.98", letterSpacing: "-0.025em" }],
-        "display-md": ["clamp(2rem, 4vw, 3.25rem)", { lineHeight: "1.02", letterSpacing: "-0.02em" }],
+        "display-xl": ["clamp(3.5rem, 9vw, 8rem)", { lineHeight: "0.88", letterSpacing: "-0.04em" }],
+        "display-lg": ["clamp(3rem, 6.5vw, 6rem)", { lineHeight: "0.92", letterSpacing: "-0.035em" }],
+        "display-md": ["clamp(2.25rem, 4.5vw, 4rem)", { lineHeight: "0.98", letterSpacing: "-0.03em" }],
       },
       letterSpacing: {
         tightest: "-0.04em",
