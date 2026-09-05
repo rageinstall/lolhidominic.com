@@ -1,30 +1,25 @@
 import type { Metadata } from "next";
-import { JetBrains_Mono, DM_Serif_Display } from "next/font/google";
+import { Instrument_Serif, Manrope } from "next/font/google";
 import "./globals.css";
 import SkipNav from "@/components/SkipNav";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { site } from "@/lib/site";
 
-// Google Fonts via next/font (hashed, no layout shift)
-const mono = JetBrains_Mono({
+const sans = Manrope({
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
-  variable: "--font-mono",
+  weight: ["400", "500", "600", "700", "800"],
+  variable: "--font-sans",
   display: "swap",
 });
 
-const serif = DM_Serif_Display({
+const display = Instrument_Serif({
   subsets: ["latin"],
-  weight: ["400"],
+  weight: "400",
   style: ["normal", "italic"],
-  variable: "--font-serif",
+  variable: "--font-display",
   display: "swap",
 });
-
-// Clash Display + Satoshi are served via Fontshare (not Google Fonts).
-// They're @import-ed at the top of globals.css which is the right place
-// since Next.js doesn't natively support non-Google font providers.
 
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
@@ -48,7 +43,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${mono.variable} ${serif.variable} dark`}>
+    <html lang="en" className={`${sans.variable} ${display.variable}`}>
       <body>
         <SkipNav />
         <NavBar />
