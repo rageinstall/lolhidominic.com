@@ -16,13 +16,14 @@
   --ink-soft:   #B4C3DE;
   --ink-muted:  #8FA1C2;
   --ink-faint:  #6D7AA0;
+  --blue:       #5BCFFB;
   --matcha:     #4CFF8D;
   --cyber:      #8C4DFF;
   --amber:      #FFB25C;
   --flame:      #FF4A1C;
   --pink:       #F5A9B8;
-  --accent:     var(--matcha);
-  --accent-2:   var(--cyber);
+  --accent:     var(--blue);
+  --accent-2:   var(--pink);
   --highlight:  color-mix(in oklab, var(--accent) 18%, transparent);
   --t:          200ms cubic-bezier(.2,.7,.2,1);
 }
@@ -52,7 +53,6 @@
 
   img, svg { display: block; max-width: 100%; }
 
-  /* focus ring */
   :focus-visible {
     outline: 2px solid var(--blue);
     outline-offset: 3px;
@@ -61,8 +61,6 @@
 
 /* ── Component classes ── */
 @layer components {
-
-  /* Category pill (glowing dot + mono label) */
   .cat-pill {
     @apply inline-flex items-center gap-2;
     padding: 7px 14px;
@@ -84,7 +82,6 @@
     box-shadow: 0 0 8px var(--blue);
   }
 
-  /* Eyebrow label (mono, muted) */
   .eyebrow {
     font-family: 'JetBrains Mono', ui-monospace, monospace;
     font-size: 10.5px;
@@ -94,19 +91,14 @@
     color: var(--ink-faint);
   }
 
-  /* Surface card */
   .card {
     background: var(--surface);
     border: 1px solid var(--rule);
     border-radius: 18px;
   }
 
-  /* Hairline rule */
-  .rule {
-    border-top: 1px solid var(--hairline);
-  }
+  .rule { border-top: 1px solid var(--hairline); }
 
-  /* Pull quote (serif, gradient bg) */
   .pullquote {
     position: relative;
     padding: 36px 36px 36px 52px;
@@ -126,14 +118,14 @@
     position: absolute; top: -4px; left: 14px;
     font-family: 'DM Serif Display', Georgia, serif;
     font-size: 80px; line-height: 1;
-    color: var(--matcha); opacity: 0.85;
+    color: var(--blue); opacity: 0.85;
   }
 
   .hero-panel {
     position: relative;
     overflow: hidden;
     border-radius: 32px;
-    background: radial-gradient(circle at top left, rgba(76,255,141,0.12), transparent 30%), radial-gradient(circle at bottom right, rgba(140,77,255,0.11), transparent 30%), var(--surface);
+    background: radial-gradient(circle at top left, rgba(91,207,251,0.12), transparent 30%), radial-gradient(circle at bottom right, rgba(245,169,184,0.11), transparent 30%), var(--surface);
     border: 1px solid rgba(255,255,255,0.06);
   }
   .hero-panel::before {
@@ -150,10 +142,7 @@
     background: rgba(255,255,255,0.03);
     transition: transform var(--t), border-color var(--t), background-color var(--t), box-shadow var(--t);
   }
-  .channel-card:hover {
-    transform: translateY(-2px);
-    background: rgba(255,255,255,0.07);
-  }
+  .channel-card:hover { transform: translateY(-2px); background: rgba(255,255,255,0.07); }
   .channel-card.matcha:hover { box-shadow: 0 0 60px -24px rgba(76,255,141,0.35); }
   .channel-card.cyber:hover { box-shadow: 0 0 60px -24px rgba(140,77,255,0.35); }
   .channel-card.amber:hover { box-shadow: 0 0 60px -24px rgba(255,178,92,0.35); }
@@ -169,7 +158,6 @@
     backdrop-filter: blur(16px);
   }
 
-  /* Gradient title text */
   .title-gradient {
     background: linear-gradient(120deg, var(--ink) 30%, var(--blue) 70%, var(--pink) 100%);
     -webkit-background-clip: text;
@@ -177,7 +165,6 @@
     -webkit-text-fill-color: transparent;
   }
 
-  /* Tag chip */
   .tag {
     font-family: 'JetBrains Mono', ui-monospace, monospace;
     font-size: 11.5px;
@@ -190,12 +177,8 @@
     text-decoration: none;
     transition: color var(--t), border-color var(--t);
   }
-  .tag:hover {
-    color: var(--blue);
-    border-color: var(--blue);
-  }
+  .tag:hover { color: var(--blue); border-color: var(--blue); }
 
-  /* Button: primary */
   .btn-primary {
     display: inline-flex;
     align-items: center;
@@ -212,7 +195,6 @@
   }
   .btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
 
-  /* Button: ghost */
   .btn-ghost {
     display: inline-flex;
     align-items: center;
@@ -229,7 +211,6 @@
   }
   .btn-ghost:hover { border-color: var(--blue); color: var(--blue); }
 
-  /* Reading progress bar */
   .progress-bar {
     position: fixed;
     top: 0; left: 0; right: 0;
