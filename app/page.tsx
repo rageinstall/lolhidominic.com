@@ -23,6 +23,7 @@ const stats = [
 
 const work = [
   { title: "Fossil — Made For This", type: "Brand campaign", body: "A cinematic creator film built around Dominic's story, creativity, presence, and the question of what we were made for.", href: "/work/fossil-made-for-this" },
+  { title: "POIZON", type: "Brand campaign", body: "Sneaker, fashion, and giveaway content built around personal style and audience participation, with 335K+ documented views across featured assets.", href: "/work/poizon" },
   { title: "Portland Pride 2024", type: "Campaign case study", body: "A creator-led Pride trip turned into a city story about queer community, local culture, and lived experience — including a documented 1M+ view feature.", href: "/work/portland-pride" },
   { title: "DC Pride → WorldPride DC", type: "Case study · 2024 → 2025", body: "A two-year Pride storytelling case study showing how a personal point of view evolved as the scale grew.", href: "/work/dc-pride-worldpride" },
   { title: "T-Time Media LLC", type: "Studio", body: "The creative studio behind Dominic’s work — video, brand building, sponsored campaigns, and experiences.", href: "/work-with-me#t-time-media" },
