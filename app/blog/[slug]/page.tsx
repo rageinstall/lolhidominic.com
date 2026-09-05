@@ -52,16 +52,16 @@ export default function PostPage({ params }: Params) {
   return (
     <article>
       {/* Article header */}
-      <header className="mx-auto max-w-3xl px-5 pb-10 pt-16 md:px-8 md:pt-24">
+      <header className="mx-auto max-w-3xl px-5 pb-10 pt-16 md:px-8 md:pt-24 bg-bg text-ink">
         <Link href="/blog" className="font-display text-sm font-semibold text-flame hover:underline">
           &larr; All writing
         </Link>
         <p className="eyebrow mb-5 mt-8">{post.category}</p>
-        <h1 className="font-display text-display-lg font-black text-ink dark:text-paper text-balance">
+        <h1 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] font-black text-white text-balance">
           {post.title}
         </h1>
-        <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-ink/55 dark:text-paper/55">
-          <span className="font-display font-semibold text-ink dark:text-paper">{site.name}</span>
+        <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-ink-faint">
+          <span className="font-display font-semibold text-white">{site.name}</span>
           <span aria-hidden="true">&middot;</span>
           <time dateTime={post.date}>{formatDate(post.date)}</time>
           <span aria-hidden="true">&middot;</span>
@@ -70,8 +70,8 @@ export default function PostPage({ params }: Params) {
       </header>
 
       {/* Cover */}
-      <div className="mx-auto max-w-5xl px-5 md:px-8">
-        <div className="relative aspect-[16/9] w-full overflow-hidden bg-paper-deep dark:bg-night-soft">
+      <div className="mx-auto max-w-5xl px-5 md:px-8 bg-bg">
+        <div className="relative aspect-[16/9] w-full overflow-hidden bg-surface2">
           <Image
             src={post.cover}
             alt={post.coverAlt}
@@ -84,26 +84,26 @@ export default function PostPage({ params }: Params) {
       </div>
 
       {/* Body */}
-      <div className="mx-auto max-w-3xl px-5 py-14 md:px-8 md:py-20">
+      <div className="mx-auto max-w-3xl px-5 py-14 md:px-8 md:py-20 bg-bg">
         <div className="prose-editorial">
           <MDXRemote source={post.content} components={useMDXComponents({})} />
         </div>
 
         <div className="rule mt-16 pt-8">
-          <p className="font-serif text-xl italic leading-snug text-ink/80 dark:text-paper/80">
+          <p className="font-serif text-xl italic leading-snug text-ink-muted">
             Written by Dominic. If this said something out loud you&rsquo;d been thinking quietly,
             that&rsquo;s the whole point.
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <Link
               href="/about"
-              className="border border-ink/25 px-5 py-2.5 font-display text-sm font-semibold text-ink hover:border-ink dark:border-paper/25 dark:text-paper dark:hover:border-paper"
+              className="rounded-full border border-white/25 px-5 py-2.5 font-display text-sm font-semibold text-white hover:border-flame hover:text-flame"
             >
               More about me
             </Link>
             <a
               href="https://instagram.com/lolhidominic"
-              className="border border-ink/25 px-5 py-2.5 font-display text-sm font-semibold text-ink hover:border-ink dark:border-paper/25 dark:text-paper dark:hover:border-paper"
+              className="rounded-full border border-white/25 px-5 py-2.5 font-display text-sm font-semibold text-white hover:border-flame hover:text-flame"
             >
               Follow along
             </a>
@@ -113,8 +113,8 @@ export default function PostPage({ params }: Params) {
 
       {/* Related */}
       {related.length > 0 ? (
-        <section className="border-t border-ink/10 dark:border-paper/10" aria-labelledby="related-heading">
-          <div className="mx-auto max-w-7xl px-5 py-16 md:px-8 md:py-24">
+        <section className="border-t border-white/10 bg-bg" aria-labelledby="related-heading">
+          <div className="mx-auto max-w-[1320px] px-6 py-16 md:px-8 md:py-24">
             <h2 id="related-heading" className="eyebrow mb-10">
               More in {post.category}
             </h2>

@@ -23,7 +23,7 @@ export default function AboutPage() {
         <p className="eyebrow mb-5">About Dominic</p>
         <h1 className="max-w-6xl font-display text-[clamp(3.5rem,9vw,8rem)] font-black leading-[0.88] tracking-[-0.055em] text-white">
           I didn’t start creating because I had something to sell.<br />
-          <span className="text-blue">I started because I wanted to see myself.</span>
+          <span className="text-flame">I started because I wanted to see myself.</span>
         </h1>
       </section>
 
@@ -57,12 +57,12 @@ export default function AboutPage() {
         <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
           <div><p className="eyebrow mb-4">What I want people to feel</p><h2 className="font-display text-5xl font-black leading-none tracking-tight text-white md:text-7xl">When they leave my work, I want them to feel...</h2></div>
           <div className="grid gap-px bg-white/10 sm:grid-cols-3">
-            {feelings.map((feeling) => <div key={feeling} className="bg-surface p-8"><p className="font-display text-3xl font-black text-blue">{feeling}</p></div>)}
+            {feelings.map((feeling) => <div key={feeling} className="bg-surface p-8"><p className="font-display text-3xl font-black text-flame">{feeling}</p></div>)}
           </div>
         </div>
       </section>
 
-      <section className="bg-blue px-6 py-16 text-bg md:px-8 md:py-24">
+      <section className="bg-flame px-6 py-16 text-bg md:px-8 md:py-24">
         <div className="mx-auto flex max-w-[1320px] flex-col justify-between gap-8 md:flex-row md:items-end">
           <div><p className="mb-3 font-mono text-[11px] font-bold uppercase tracking-[0.24em]">Today</p><h2 className="max-w-3xl font-display text-4xl font-black leading-none md:text-6xl">Creator. Storyteller. Brand builder.</h2></div>
           <Link href="/work-with-me" className="rounded-full bg-bg px-6 py-3 text-sm font-bold text-white transition hover:bg-white hover:text-bg">See the work →</Link>

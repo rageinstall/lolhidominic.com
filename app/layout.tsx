@@ -29,7 +29,7 @@ const serif = DM_Serif_Display({
 export const metadata: Metadata = {
   metadataBase: new URL(site.url),
   title: {
-    default: site.name,
+    default: site.title,
     template: `%s | ${site.shortName}`,
   },
   description: site.description,
