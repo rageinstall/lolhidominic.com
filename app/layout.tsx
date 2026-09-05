@@ -1,22 +1,21 @@
 import type { Metadata } from "next";
-import { Instrument_Serif, Manrope } from "next/font/google";
+import { DM_Sans, Syne } from "next/font/google";
 import "./globals.css";
 import SkipNav from "@/components/SkipNav";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { site } from "@/lib/site";
 
-const sans = Manrope({
+const sans = DM_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
   variable: "--font-sans",
   display: "swap",
 });
 
-const display = Instrument_Serif({
+const display = Syne({
   subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
+  weight: ["600", "700", "800"],
   variable: "--font-display",
   display: "swap",
 });
