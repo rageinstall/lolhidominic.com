@@ -1,17 +1,14 @@
-// Single source of truth for navigation, socials, and platform links.
-// Update once here and every NavBar / Footer / page stays in sync.
+// Single source of truth for the personal brand site.
 
 export const site = {
-  name: "Dominic Anthony Pérignon",
+  name: "Dominic Pérignon",
   shortName: "lolhidominic",
   domain: "lolhidominic.com",
   url: "https://lolhidominic.com",
   org: "T-Time Media LLC",
-  // One line, his voice, used in metadata + footer.
-  tagline:
-    "Dominic sharing weed, travel, cooking, movies, and gaming from a real-life perspective.",
+  tagline: "Creator, storyteller, and brand builder.",
   description:
-    "A personal site for travel notes, weed life, cooking experiments, movie reactions, and the everyday thoughts of Dominic Anthony Pérignon.",
+    "Dominic Pérignon is a Los Angeles-based creator, storyteller, and brand builder making videos, building brands, and telling stories that make people feel less alone.",
   email: "info@lolhidominic.com",
 };
 
@@ -21,33 +18,29 @@ export type NavLink = {
   external?: boolean;
 };
 
-// Internal pages, in nav order.
 export const navLinks: NavLink[] = [
-  { label: "Writing", href: "/blog" },
   { label: "About", href: "/about" },
-  { label: "Work With Me", href: "/work-with-me" },
-  { label: "Press", href: "/press" },
-  { label: "Link With Pride", href: "/link-with-pride" },
+  { label: "Work", href: "/work-with-me" },
+  { label: "T-Time Media", href: "/work-with-me#t-time-media" },
+  { label: "Writing", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
-// External destinations. linkwithpride first, then the social handles.
 export const externalLinks: NavLink[] = [
   { label: "Link With Pride", href: "https://linkwithpride.com", external: true },
   { label: "Instagram", href: "https://instagram.com/lolhidominic", external: true },
-  { label: "Threads", href: "https://threads.com/@lolhidominic", external: true },
+  { label: "TikTok", href: "https://tiktok.com/@lolhidominic", external: true },
   { label: "YouTube", href: "https://youtube.com/@lolhidominic", external: true },
   { label: "Facebook", href: "https://facebook.com/domfactcheck", external: true },
 ];
 
 export const socials = [
   { label: "Instagram", handle: "@lolhidominic", href: "https://instagram.com/lolhidominic" },
-  { label: "Threads", handle: "@lolhidominic", href: "https://threads.com/@lolhidominic" },
+  { label: "TikTok", handle: "@lolhidominic", href: "https://tiktok.com/@lolhidominic" },
   { label: "YouTube", handle: "@lolhidominic", href: "https://youtube.com/@lolhidominic" },
-  { label: "Facebook", handle: "@domfactcheck", href: "https://instagram.com/domfactcheck" },
+  { label: "Facebook", handle: "@domfactcheck", href: "https://facebook.com/domfactcheck" },
 ];
 
-// Blog topics. These drive both front matter validation and the filter UI.
 export const categories = [
   "Media Literacy",
   "Trans Life",
