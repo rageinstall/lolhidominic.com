@@ -20,7 +20,7 @@ const platforms = [
   { title: "LolHiDominic", type: "Creator platform", body: "My personal media platform: video, culture, travel, trans life, humor, and stories that matter.", href: "https://instagram.com/lolhidominic", external: true },
   { title: "Link With Pride", type: "Travel platform", body: "An LGBTQ+ travel platform built to help people make better-informed decisions about where they go.", href: "/link-with-pride" },
   { title: "T-Time", type: "Community", body: "A transgender and allies community built around connection, education, kindness, privacy, and safety.", href: "/t-time-media" },
-  { title: "@domfactcheck", type: "Media project", body: "A fact-checking and context-driven extension of my storytelling work.", href: "https://instagram.com/domfactcheck", external: true },
+  { title: "@dominicsview", type: "Media project", body: "A fact-checking and context-driven extension of my storytelling work.", href: "https://instagram.com/dominicsview", external: true },
 ];
 
 const partnerships = [
