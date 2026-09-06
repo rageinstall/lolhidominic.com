@@ -10,7 +10,7 @@ export default function Footer() {
         <div className="grid gap-12 md:grid-cols-12">
           <div className="md:col-span-5">
             <Link href="/" className="font-display text-2xl font-bold text-ink" style={{ letterSpacing: "-0.03em" }}>
-              <span className="text-white">lolhi</span><span className="text-blue">dominic</span>
+              <span className="text-ink">lolhi</span><span className="text-blue">dominic</span>
             </Link>
             <p className="mt-4 max-w-[28ch] font-serif italic text-lg leading-snug text-ink-muted">
               Creator, storyteller, and brand builder making things that make people feel less alone.
@@ -42,20 +42,12 @@ export default function Footer() {
                   <span className="font-mono text-[0.72rem] text-ink-faint">{s.handle}</span>
                 </li>
               ))}
-              <li className="pt-3">
-                <a href="https://linkwithpride.com" className="font-mono text-xs font-medium uppercase tracking-label text-blue hover:underline">
-                  linkwithpride.com
-                </a>
-              </li>
             </ul>
           </div>
         </div>
 
         <div className="mt-14 flex items-center justify-between border-t border-hairline pt-6">
           <p className="font-mono text-[11px] tracking-[0.04em] text-ink-faint">&copy; {year} {site.org}. All rights reserved.</p>
-          <div className="flex h-[10px] w-14 overflow-hidden rounded-[4px]" aria-hidden="true">
-            <span className="flex-1 bg-blue" /><span className="flex-1 bg-pink" /><span className="flex-1 bg-white" /><span className="flex-1 bg-pink" /><span className="flex-1 bg-blue" />
-          </div>
         </div>
       </div>
     </footer>
