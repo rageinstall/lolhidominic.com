@@ -2,93 +2,13 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { site } from "@/lib/site";
 
-export const metadata: Metadata = {
-  title: "POIZON — Sneakers, Style & Self-Expression",
-  description: "A POIZON creator campaign case study by Dominic Pérignon.",
-  openGraph: {
-    title: `POIZON — Sneakers, Style & Self-Expression | ${site.shortName}`,
-    description: "A POIZON creator campaign case study by Dominic Pérignon.",
-    url: `${site.url}/work/poizon`,
-    type: "article",
-  },
-  alternates: { canonical: "/work/poizon" },
-};
-
-const results = [
-  ["335K+", "documented views across featured content"],
-  ["91K", "views on the featured holiday Jordan giveaway Reel"],
-  ["90.5K", "views on Black Friday / POIZON sneaker content"],
-  ["58K", "views on wardrobe transformation content"],
-];
-
-export default function PoizonPage() {
-  return (
-    <div className="bg-bg text-ink">
-      <section className="mx-auto max-w-[1320px] px-6 pb-20 pt-16 md:px-8 md:pb-28 md:pt-24">
-        <p className="eyebrow mb-5">Brand campaign · POIZON</p>
-        <h1 className="max-w-5xl font-display text-[clamp(4rem,10vw,8.5rem)] font-black leading-[0.86] tracking-[-0.06em] text-white">
-          Sneakers.<br /><span className="text-blue">Style.</span><br />Self-expression.
-        </h1>
-        <p className="mt-8 max-w-2xl text-xl leading-relaxed text-ink-muted md:text-2xl">
-          A creator campaign built around sneaker culture, personal style, giveaways, and making the product part of the story rather than the interruption.
-        </p>
-      </section>
-
-      <div className="mx-auto max-w-[1320px] px-6 md:px-8"><div className="rule" /></div>
-
-      <section className="mx-auto max-w-[1320px] px-6 py-20 md:px-8 md:py-28">
-        <div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr]">
-          <div>
-            <p className="eyebrow mb-4">The partnership</p>
-            <h2 className="font-display text-4xl font-black tracking-tight text-white md:text-6xl">Fashion content that feels personal.</h2>
-          </div>
-          <div className="max-w-3xl space-y-6 text-lg leading-relaxed text-ink-muted">
-            <p>The supplied campaign materials document Dominic creating sponsored POIZON content across sneaker, fashion, and giveaway concepts.</p>
-            <p>The work centers on recognizable creator formats: showing the product in context, building an outfit around it, talking about sneakers, and giving the audience a reason to participate.</p>
-          </div>
-        </div>
-      </section>
-
-      <section className="border-y border-white/10 bg-surface">
-        <div className="mx-auto max-w-[1320px] px-6 py-20 md:px-8 md:py-28">
-          <p className="eyebrow mb-8">The creative</p>
-          <div className="grid gap-px bg-white/10 md:grid-cols-3">
-            {[
-              ["01", "Sneaker culture", "Content that treats sneakers as part of identity and everyday style."],
-              ["02", "Wardrobe transformation", "Fashion storytelling built around changing the look, not simply showing the product."],
-              ["03", "Giveaway energy", "A participation-driven format that gives the audience a reason to stop, engage, and share."],
-            ].map(([number, title, body]) => (
-              <div key={number} className="bg-surface p-8 md:p-10">
-                <span className="font-mono text-xs text-blue">{number}</span>
-                <h3 className="mt-10 font-display text-3xl font-black text-white">{title}</h3>
-                <p className="mt-4 leading-relaxed text-ink-muted">{body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-[1320px] px-6 py-20 md:px-8 md:py-28">
-        <p className="eyebrow mb-8">Documented performance</p>
-        <div className="grid gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/10 md:grid-cols-2">
-          {results.map(([value, label]) => (
-            <div key={value + label} className="bg-bg p-8 md:p-10">
-              <p className="font-display text-5xl font-black tracking-tight text-white md:text-7xl">{value}</p>
-              <p className="mt-3 max-w-md text-sm uppercase tracking-[0.12em] text-ink-faint">{label}</p>
-            </div>
-          ))}
-        </div>
-        <p className="mt-6 max-w-2xl text-sm leading-relaxed text-ink-faint">The 335K+ figure is the sum of six visible view counts in the supplied campaign materials. It is presented as documented views across featured assets, not total campaign reach or impressions.</p>
-      </section>
-
-      <section className="bg-blue px-6 py-20 text-bg md:px-8 md:py-28">
-        <div className="mx-auto max-w-[1320px]">
-          <p className="mb-4 font-mono text-[11px] font-bold uppercase tracking-[0.24em]">Why it worked</p>
-          <h2 className="max-w-4xl font-display text-5xl font-black leading-none md:text-7xl">The product became part of the lifestyle.</h2>
-          <p className="mt-7 max-w-2xl text-lg leading-relaxed">The strongest creator partnerships do not ask the audience to step outside the creator’s world. They give the creator something real to do inside it. POIZON gave Dominic a natural entry point into sneakers, fashion, self-expression, and audience participation.</p>
-          <Link href="/work-with-me" className="mt-8 inline-flex rounded-full bg-bg px-7 py-4 text-sm font-bold text-white transition hover:bg-white hover:text-bg">Back to selected work →</Link>
-        </div>
-      </section>
-    </div>
-  );
-}
+export const metadata: Metadata = { title: "POIZON — Sneakers, Style & Self-Expression", description: "A POIZON creator campaign case study by Dominic Pérignon.", openGraph: { title: `POIZON — Sneakers, Style & Self-Expression | ${site.shortName}`, description: "A POIZON creator campaign case study by Dominic Pérignon.", url: `${site.url}/work/poizon`, type: "article" }, alternates: { canonical: "/work/poizon" } };
+const results = [["335K+","documented views across featured content"],["91K","views on the featured holiday Jordan giveaway Reel"],["90.5K","views on Black Friday / POIZON sneaker content"],["58K","views on wardrobe transformation content"]];
+export default function PoizonPage(){return <div className="bg-bg text-ink">
+<section className="mx-auto max-w-[1320px] px-6 pb-20 pt-16 md:px-8 md:pb-28 md:pt-24"><p className="eyebrow mb-5">Brand campaign · POIZON</p><h1 className="max-w-5xl font-display text-[clamp(4rem,10vw,8.5rem)] font-black leading-[0.86] tracking-[-0.06em]">Sneakers.<br /><span className="text-blue">Style.</span><br />Self-expression.</h1><p className="mt-8 max-w-2xl text-xl leading-relaxed text-ink-muted md:text-2xl">A creator campaign built around sneaker culture, personal style, giveaways, and making the product part of the story rather than the interruption.</p></section>
+<div className="mx-auto max-w-[1320px] px-6 md:px-8"><div className="rule" /></div>
+<section className="mx-auto max-w-[1320px] px-6 py-20 md:px-8 md:py-28"><div className="grid gap-12 lg:grid-cols-[0.7fr_1.3fr]"><div><p className="eyebrow mb-4">The partnership</p><h2 className="font-display text-4xl font-black tracking-tight md:text-6xl">Fashion content that feels personal.</h2></div><div className="max-w-3xl space-y-6 text-lg leading-relaxed text-ink-muted"><p>The supplied campaign materials document Dominic creating sponsored POIZON content across sneaker, fashion, and giveaway concepts.</p><p>The work centers on recognizable creator formats: showing the product in context, building an outfit around it, talking about sneakers, and giving the audience a reason to participate.</p></div></div></section>
+<section className="border-y border-black/10 bg-surface"><div className="mx-auto max-w-[1320px] px-6 py-20 md:px-8 md:py-28"><p className="eyebrow mb-8">The creative</p><div className="grid gap-px bg-black/10 md:grid-cols-3">{[["01","Sneaker culture","Content that treats sneakers as part of identity and everyday style."],["02","Wardrobe transformation","Fashion storytelling built around changing the look, not simply showing the product."],["03","Giveaway energy","A participation-driven format that gives the audience a reason to stop, engage, and share."]].map(([number,title,body])=><div key={number} className="bg-surface p-8 md:p-10"><span className="font-mono text-xs text-blue">{number}</span><h3 className="mt-10 font-display text-3xl font-black">{title}</h3><p className="mt-4 leading-relaxed text-ink-muted">{body}</p></div>)}</div></div></section>
+<section className="mx-auto max-w-[1320px] px-6 py-20 md:px-8 md:py-28"><p className="eyebrow mb-8">Documented performance</p><div className="grid gap-px overflow-hidden rounded-2xl border border-black/10 bg-black/10 md:grid-cols-2">{results.map(([value,label])=><div key={value+label} className="bg-bg p-8 md:p-10"><p className="font-display text-5xl font-black tracking-tight md:text-7xl">{value}</p><p className="mt-3 max-w-md text-sm uppercase tracking-[0.12em] text-ink-faint">{label}</p></div>)}</div><p className="mt-6 max-w-2xl text-sm leading-relaxed text-ink-faint">The 335K+ figure is the sum of six visible view counts in the supplied campaign materials. It is presented as documented views across featured assets, not total campaign reach or impressions.</p></section>
+<section className="bg-blue px-6 py-20 text-bg md:px-8 md:py-28"><div className="mx-auto max-w-[1320px]"><p className="mb-4 font-mono text-[11px] font-bold uppercase tracking-[0.24em]">Why it worked</p><h2 className="max-w-4xl font-display text-5xl font-black leading-none md:text-7xl">The product became part of the lifestyle.</h2><p className="mt-7 max-w-2xl text-lg leading-relaxed">The strongest creator partnerships do not ask the audience to step outside the creator’s world. They give the creator something real to do inside it. POIZON gave Dominic a natural entry point into sneakers, fashion, self-expression, and audience participation.</p><Link href="/work-with-me" className="mt-8 inline-flex rounded-full bg-bg px-7 py-4 text-sm font-bold text-white transition hover:bg-white hover:text-bg">Back to selected work →</Link></div></section>
+</div>}
