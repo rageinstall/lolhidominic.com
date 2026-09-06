@@ -22,7 +22,6 @@ export const navLinks: NavLink[] = [
   { label: "About", href: "/about" },
   { label: "Work", href: "/work-with-me" },
   { label: "T-Time Media", href: "/t-time-media" },
-  { label: "Writing", href: "/blog" },
   { label: "Contact", href: "/contact" },
 ];
 
