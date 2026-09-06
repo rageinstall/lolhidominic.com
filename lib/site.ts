@@ -29,14 +29,14 @@ export const externalLinks: NavLink[] = [
   { label: "Instagram", href: "https://instagram.com/lolhidominic", external: true },
   { label: "TikTok", href: "https://tiktok.com/@lolhidominic", external: true },
   { label: "YouTube", href: "https://youtube.com/@lolhidominic", external: true },
-  { label: "Facebook", href: "https://facebook.com/lolhidominic", external: true },
+  { label: "Facebook", href: "https://facebook.com/dominicsview", external: true },
 ];
 
 export const socials = [
   { label: "Instagram", handle: "@lolhidominic", href: "https://instagram.com/lolhidominic" },
   { label: "TikTok", handle: "@lolhidominic", href: "https://tiktok.com/@lolhidominic" },
   { label: "YouTube", handle: "@lolhidominic", href: "https://youtube.com/@lolhidominic" },
-  { label: "Facebook", handle: "@lolhidominic", href: "https://facebook.com/lolhidominic" },
+  { label: "Facebook", handle: "@dominicsview", href: "https://facebook.com/dominicsview" },
 ];
 
 export const categories = [
