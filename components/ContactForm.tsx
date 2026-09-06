@@ -82,12 +82,8 @@ export default function ContactForm() {
         />
       </div>
 
-      <button
-        type="submit"
-        className="rounded-pill bg-gradient-to-br from-blue to-pink px-7 py-3 font-sans text-sm font-semibold transition-opacity hover:opacity-90"
-        style={{ color: "#0a0f1c" }}
-      >
-        Send it
+      <button type="submit" className="btn-primary">
+        Send it →
       </button>
     </form>
   );
