@@ -12,8 +12,8 @@ export const metadata: Metadata = {
 const stats = [
   ["175K+", "Instagram followers"],
   ["100K+", "TikTok followers"],
-  ["278K+", "across Instagram, TikTok & YouTube"],
-  ["1.2M+", "TikTok views · last 28 days"],
+  ["54K", "Facebook followers"],
+  ["1.8K", "YouTube subscribers"],
 ];
 
 const featured = [
