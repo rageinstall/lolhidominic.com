@@ -26,18 +26,17 @@ export const navLinks: NavLink[] = [
 ];
 
 export const externalLinks: NavLink[] = [
-  { label: "Link With Pride", href: "https://linkwithpride.com", external: true },
   { label: "Instagram", href: "https://instagram.com/lolhidominic", external: true },
   { label: "TikTok", href: "https://tiktok.com/@lolhidominic", external: true },
   { label: "YouTube", href: "https://youtube.com/@lolhidominic", external: true },
-  { label: "Facebook", href: "https://facebook.com/domfactcheck", external: true },
+  { label: "Facebook", href: "https://facebook.com/lolhidominic", external: true },
 ];
 
 export const socials = [
   { label: "Instagram", handle: "@lolhidominic", href: "https://instagram.com/lolhidominic" },
   { label: "TikTok", handle: "@lolhidominic", href: "https://tiktok.com/@lolhidominic" },
   { label: "YouTube", handle: "@lolhidominic", href: "https://youtube.com/@lolhidominic" },
-  { label: "Facebook", handle: "@domfactcheck", href: "https://facebook.com/domfactcheck" },
+  { label: "Facebook", handle: "@lolhidominic", href: "https://facebook.com/lolhidominic" },
 ];
 
 export const categories = [
