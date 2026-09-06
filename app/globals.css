@@ -100,6 +100,13 @@
     transition: transform var(--t), background var(--t), color var(--t);
   }
   .btn-ghost:hover { transform: translateY(-2px); background: var(--pink); }
+  .studio-cta {
+    border: 1.5px solid var(--ink);
+    border-radius: 999px;
+    box-shadow: 5px 5px 0 var(--ink);
+    animation: cta-attention 2.8s ease-in-out infinite;
+  }
+  .studio-cta:hover { animation-play-state: paused; transform: translate(-3px,-3px); box-shadow: 8px 8px 0 var(--ink); }
   .work-card {
     position: relative;
     min-height: 260px;
@@ -144,7 +151,16 @@
   }
   .marquee-item::after { content: "✳"; font-size: 12px; }
   @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
-  @media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+  @keyframes cta-attention {
+    0%, 70%, 100% { transform: translateY(0); box-shadow: 5px 5px 0 var(--ink); }
+    76% { transform: translateY(-4px); box-shadow: 7px 7px 0 var(--ink); }
+    82% { transform: translateY(0); box-shadow: 5px 5px 0 var(--ink); }
+    88% { transform: translateY(-2px); box-shadow: 6px 6px 0 var(--ink); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .marquee-track { animation: none; }
+    .studio-cta { animation: none; }
+  }
 }
 
 .font-display, h1, h2, h3 { font-family: var(--font-display), sans-serif; font-weight: 700; letter-spacing: -.045em; }
