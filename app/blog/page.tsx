@@ -24,7 +24,7 @@ export default function BlogIndexPage() {
     <div className="mx-auto max-w-7xl px-5 py-10 md:px-8 md:py-16">
       <header className="max-w-4xl">
         <p className="eyebrow mb-4">Writing</p>
-        <h1 className="font-display text-[clamp(2.8rem,5vw,4.5rem)] font-black tracking-[-0.025em] text-paper">
+        <h1 className="font-display text-[clamp(2.8rem,5vw,4.5rem)] font-black tracking-[-0.025em] text-ink">
           Stories, ideas, and things I can&rsquo;t stop thinking about.
         </h1>
         <p className="mt-6 max-w-prose text-lg leading-relaxed text-ink-soft">
