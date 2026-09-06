@@ -62,8 +62,8 @@ export default function TTimeMediaPage() {
           <h2 className="font-display text-3xl font-extrabold text-ink dark:text-paper">Have an idea?</h2>
           <p className="mt-3 max-w-xl text-ink/65 dark:text-paper/65">Bring the brief, the weird idea, or the half-finished thought. We can figure out the rest.</p>
         </div>
-        <Link href="/contact" className="inline-block shrink-0 bg-flame px-7 py-4 font-display text-sm font-bold uppercase tracking-label text-paper transition-colors hover:bg-flame-deep">
-          Start a conversation
+        <Link href="/contact" className="studio-cta inline-flex shrink-0 items-center justify-center bg-pink px-7 py-4 font-display text-sm font-bold uppercase tracking-label text-ink transition-colors hover:bg-blue hover:text-white">
+          Start a conversation ↗
         </Link>
       </section>
     </div>
