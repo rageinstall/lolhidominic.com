@@ -10,6 +10,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.6.1",
     "coffee-script": "^1.12.7",
     "gray-matter": "^2.0.1",
     "next": "^16.2.9",
