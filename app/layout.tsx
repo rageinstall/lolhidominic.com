@@ -5,6 +5,7 @@ import SkipNav from "@/components/SkipNav";
 import NavBar from "@/components/NavBar";
 import Footer from "@/components/Footer";
 import { site } from "@/lib/site";
+import { Analytics } from "@vercel/analytics/next";
 
 const sans = DM_Sans({
   subsets: ["latin"],
@@ -50,6 +51,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           {children}
         </main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );
