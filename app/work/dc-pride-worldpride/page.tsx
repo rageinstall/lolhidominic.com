@@ -110,7 +110,7 @@ export default function DcPrideWorldPridePage() {
         <div className="mx-auto max-w-[1320px]">
           <p className="mb-4 font-mono text-[11px] font-bold uppercase tracking-[0.24em]">More work</p>
           <h2 className="max-w-4xl font-display text-5xl font-black leading-none md:text-7xl">Let’s make something people actually want to watch.</h2>
-          <Link href="/contact" className="mt-8 inline-flex rounded-full bg-bg px-7 py-4 text-sm font-bold text-white transition hover:bg-white hover:text-bg">Work with Dominic →</Link>
+          <Link href="/contact" className="mt-8 inline-flex rounded-full bg-bg px-7 py-4 text-sm font-bold text-ink transition hover:bg-ink hover:text-bg">Work with Dominic →</Link>
         </div>
       </section>
     </div>

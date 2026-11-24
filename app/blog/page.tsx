@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import { getAllPosts } from "@/lib/posts";
 import { site } from "@/lib/site";
-import FeaturedStory from "@/components/FeaturedStory";
-import MagazineFeed from "@/components/MagazineFeed";
+import BlogFilter from "@/components/BlogFilter";
 
 export const metadata: Metadata = {
   title: "Writing",
@@ -18,7 +17,6 @@ export const metadata: Metadata = {
 
 export default function BlogIndexPage() {
   const posts = getAllPosts();
-  const featured = posts.find((post) => post.featured) ?? posts[0];
 
   return (
     <div className="mx-auto max-w-7xl px-5 py-10 md:px-8 md:py-16">
@@ -32,9 +30,8 @@ export default function BlogIndexPage() {
         </p>
       </header>
 
-      <div className="mt-12 space-y-12">
-        {featured ? <FeaturedStory post={featured} /> : null}
-        <MagazineFeed posts={posts.filter((post) => post.slug !== featured?.slug)} />
+      <div className="mt-12">
+        <BlogFilter posts={posts} />
       </div>
     </div>
   );

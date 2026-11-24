@@ -8,14 +8,15 @@ import { site } from "@/lib/site";
 import { useMDXComponents } from "@/mdx-components";
 import BlogCard from "@/components/BlogCard";
 
-type Params = { params: { slug: string } };
+type Params = { params: Promise<{ slug: string }> };
 
 export function generateStaticParams() {
   return getAllSlugs().map((slug) => ({ slug }));
 }
 
-export function generateMetadata({ params }: Params): Metadata {
-  const post = getPost(params.slug);
+export async function generateMetadata({ params }: Params): Promise<Metadata> {
+  const { slug } = await params;
+  const post = getPost(slug);
   if (!post) return { title: "Not found" };
 
   const url = `${site.url}/blog/${post.slug}`;
@@ -41,8 +42,9 @@ export function generateMetadata({ params }: Params): Metadata {
   };
 }
 
-export default function PostPage({ params }: Params) {
-  const post = getPost(params.slug);
+export default async function PostPage({ params }: Params) {
+  const { slug } = await params;
+  const post = getPost(slug);
   if (!post) notFound();
 
   const related = getAllPosts()
@@ -53,7 +55,7 @@ export default function PostPage({ params }: Params) {
     <article>
       {/* Article header */}
       <header className="mx-auto max-w-3xl px-5 pb-10 pt-16 md:px-8 md:pt-24">
-        <Link href="/blog" className="font-display text-sm font-semibold text-flame hover:underline">
+        <Link href="/blog" className="font-display text-sm font-semibold text-blue hover:underline">
           &larr; All writing
         </Link>
         <p className="eyebrow mb-5 mt-8">{post.category}</p>

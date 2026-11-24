@@ -124,7 +124,7 @@ export default function PressPage() {
         </p>
         <Link
           href="/contact"
-          className="mt-7 inline-block bg-flame px-8 py-4 font-display text-sm font-bold uppercase tracking-label text-paper transition-colors hover:bg-flame-deep"
+          className="mt-7 inline-block bg-blue px-8 py-4 font-display text-sm font-bold uppercase tracking-label text-paper transition-colors hover:bg-blue/85"
         >
           Send a press inquiry
         </Link>
