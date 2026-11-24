@@ -39,7 +39,7 @@ export default function LinkWithPridePage() {
       {/* Hero */}
       <section className="bg-ink text-paper">
         <div className="mx-auto max-w-7xl px-5 py-20 md:px-8 md:py-28">
-          <p className="eyebrow mb-6 text-flame">A T-Time Media platform</p>
+          <p className="eyebrow mb-6 text-blue">A T-Time Media platform</p>
           <h1 className="max-w-[18ch] font-display text-display-xl font-black text-balance">
             Know before you go. Actually know.
           </h1>
@@ -51,7 +51,7 @@ export default function LinkWithPridePage() {
           </p>
           <a
             href="https://linkwithpride.com"
-            className="mt-10 inline-block bg-flame px-8 py-4 font-display text-sm font-bold uppercase tracking-label text-paper transition-colors hover:bg-flame-deep"
+            className="mt-10 inline-block bg-blue px-8 py-4 font-display text-sm font-bold uppercase tracking-label text-paper transition-colors hover:bg-blue/85"
           >
             Go to Link With Pride &rarr;
           </a>
@@ -120,7 +120,7 @@ export default function LinkWithPridePage() {
             </p>
             <a
               href="/work-with-me"
-              className="mt-7 inline-block font-display text-sm font-semibold text-flame hover:underline"
+              className="mt-7 inline-block font-display text-sm font-semibold text-blue hover:underline"
             >
               See partnership options &rarr;
             </a>

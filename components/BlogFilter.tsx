@@ -56,7 +56,7 @@ export default function BlogFilter({ posts }: { posts: PostMeta[] }) {
       {visible.length > 0 ? (
         <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {visible.map((post) => (
-            <BlogCard key={post.slug} post={post} />
+            <BlogCard key={post.slug} post={post} feature={post.featured} />
           ))}
         </div>
       ) : (

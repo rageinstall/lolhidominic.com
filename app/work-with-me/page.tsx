@@ -28,7 +28,6 @@ const partnerships = [
   { title: "Fossil — Made For This", type: "Brand campaign", body: "A creator-led campaign built around identity, creativity, presence, and the question of what we are made for.", href: "/work/fossil-made-for-this" },
   { title: "Portland Pride 2024", type: "Destination campaign", body: "A Pride trip turned into a city story about queer community, local culture, and lived experience.", href: "/work/portland-pride" },
   { title: "POIZON", type: "Brand campaign", body: "Fashion, sneaker, and giveaway content built around personal style and audience participation.", href: "/work/poizon" },
-  { title: "ThreadBeast", type: "Brand partnership", body: "A fashion creator partnership spanning multiple campaigns and years of content.", href: "/work/threadbeast" },
 ];
 
 export default function WorkWithMePage() {
